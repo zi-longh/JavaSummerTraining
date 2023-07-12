@@ -1,9 +1,25 @@
-package com.neu.edu.utils.goods;
+package com.neu.edu.utils;
 
-public class ResultModelUpdate {
-    /* status、message */
+import java.util.List;
+
+public class ResultModelGetById<T> {
+    /*
+    status: 0表示成功，1表示失败
+    message: '查询成功！',
+    data:[{},{}]
+    */
     private int status;
     private String message;
+    private T data;
+
+    public T getData() {
+        return data;
+    }
+
+    public void setData(T data) {
+        this.data = data;
+    }
+
     public int getStatus() {
         return status;
     }

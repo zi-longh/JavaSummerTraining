@@ -15,9 +15,9 @@ public interface GoodsMapper {
 
     /*
     ResultModelGet<GoodsVO> getAllGoodsInfo();
-    ResultModelUpdate addGood(GoodsVO goodsVO);
-    ResultModelUpdate deleteGoodById(int id);
-    ResultModelUpdate updateGood(GoodsVO goodsVO);
+    ResultModel addGood(GoodsVO goodsVO);
+    ResultModel deleteGoodById(int id);
+    ResultModel updateGood(GoodsVO goodsVO);
     ResultModelGetById<GoodsVO> getGoodsById(int id);
     ResultModelGetById<GoodsVO> getGoodsSumById(int id);
     */

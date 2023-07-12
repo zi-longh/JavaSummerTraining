@@ -11,6 +11,7 @@ com\neu\edu\service\impl\StorageServiceImpl.class
 com\neu\edu\service\SaleService.class
 com\neu\edu\mapper\SaleMapper.class
 com\neu\edu\mapper\StorageMapper.class
+com\neu\edu\controller\SaleController.class
 com\neu\edu\service\GoodsService.class
 com\neu\edu\service\impl\WorkerServiceImpl.class
 com\neu\edu\mapper\WorkerMapper.class

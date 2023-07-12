@@ -50,6 +50,7 @@ public class GoodsVO {
     /* goodsNum、goodsName、goodsType、goodsPrice、goodsCost */
 
 
+
     /* 重写toString */
     @Override
     public String toString() {

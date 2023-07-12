@@ -1,4 +1,4 @@
-package com.neu.edu.utils.goods;
+package com.neu.edu.utils;
 
 import java.util.List;
 

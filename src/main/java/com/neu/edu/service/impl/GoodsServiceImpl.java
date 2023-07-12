@@ -2,13 +2,12 @@ package com.neu.edu.service.impl;
 
 import com.neu.edu.mapper.GoodsMapper;
 import com.neu.edu.service.GoodsService;
-import com.neu.edu.utils.goods.ResultModelGet;
-import com.neu.edu.utils.goods.ResultModelGetById;
-import com.neu.edu.utils.goods.ResultModelUpdate;
+import com.neu.edu.utils.ResultModel;
+import com.neu.edu.utils.ResultModelGet;
+import com.neu.edu.utils.ResultModelGetById;
 import com.neu.edu.vo.GoodsVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.filter.CharacterEncodingFilter;
 
 import java.util.List;
 import java.util.Objects;
@@ -64,78 +63,78 @@ public class GoodsServiceImpl implements GoodsService {
      * 添加商品
      */
     @Override
-    public ResultModelUpdate addGood(GoodsVO goodsVO){
-        ResultModelUpdate resultModelUpdate = new ResultModelUpdate();
+    public ResultModel addGood(GoodsVO goodsVO){
+        ResultModel resultModel = new ResultModel();
         GoodsVO goods = GoodsMapper.getGoodsByName(goodsVO);
         if (goods != null) {
-            resultModelUpdate.setStatus(1);
-            resultModelUpdate.setMessage("商品已存在! (goodsNum重复)");
-            return resultModelUpdate;
+            resultModel.setStatus(1);
+            resultModel.setMessage("商品已存在! (goodsNum重复)");
+            return resultModel;
         }
 
         int result = GoodsMapper.addGood(goodsVO);
         if (result == 1) {
-            resultModelUpdate.setStatus(0);
-            resultModelUpdate.setMessage("添加商品成功!");
+            resultModel.setStatus(0);
+            resultModel.setMessage("添加商品成功!");
         } else {
-            resultModelUpdate.setStatus(1);
-            resultModelUpdate.setMessage("添加商品失败!");
+            resultModel.setStatus(1);
+            resultModel.setMessage("添加商品失败!");
         }
-        return resultModelUpdate;
+        return resultModel;
     }
 
     /**
      * 删除商品
      */
     @Override
-    public ResultModelUpdate deleteGoodById(int id){
-        ResultModelUpdate resultModelUpdate = new ResultModelUpdate();
+    public ResultModel deleteGoodById(int id){
+        ResultModel resultModel = new ResultModel();
         GoodsVO goodsVO = GoodsMapper.getGoodsById(id);
         if (goodsVO == null) {
-            resultModelUpdate.setStatus(1);
-            resultModelUpdate.setMessage("id: " + id + " 的商品不存在!");
-            return resultModelUpdate;
+            resultModel.setStatus(1);
+            resultModel.setMessage("id: " + id + " 的商品不存在!");
+            return resultModel;
         }
         int result = GoodsMapper.deleteGoodById(id);
         if (result == 1) {
-            resultModelUpdate.setStatus(0);
-            resultModelUpdate.setMessage("删除商品成功!");
+            resultModel.setStatus(0);
+            resultModel.setMessage("删除商品成功!");
         } else {
-            resultModelUpdate.setStatus(1);
-            resultModelUpdate.setMessage("删除商品失败!");
+            resultModel.setStatus(1);
+            resultModel.setMessage("删除商品失败!");
         }
-        return resultModelUpdate;
+        return resultModel;
     }
 
     /**
      * 更新商品
      */
     @Override
-    public ResultModelUpdate updateGood(GoodsVO goodsVO){
-        ResultModelUpdate resultModelUpdate = new ResultModelUpdate();
+    public ResultModel updateGood(GoodsVO goodsVO){
+        ResultModel resultModel = new ResultModel();
         GoodsVO goods = GoodsMapper.getGoodsById(goodsVO.getGoodsNum()); // 通过id查询商品, 判断商品是否存在
         if (goods == null) {
-            resultModelUpdate.setStatus(1);
-            resultModelUpdate.setMessage("id: " + goodsVO.getGoodsNum() + " 的商品不存在!");
-            return resultModelUpdate;
+            resultModel.setStatus(1);
+            resultModel.setMessage("id: " + goodsVO.getGoodsNum() + " 的商品不存在!");
+            return resultModel;
         }
         if(!Objects.equals(goods.getGoodsName(), goodsVO.getGoodsName())){ // 如果修改了商品名称, 则需要判断商品名称是否重复
             GoodsVO goods2 = GoodsMapper.getGoodsByName(goodsVO); // 通过name查询商品, 判断商品是否存在
             if (goods2 != null) {
-                resultModelUpdate.setStatus(1);
-                resultModelUpdate.setMessage("商品已存在! (goodsName重复)");
-                return resultModelUpdate;
+                resultModel.setStatus(1);
+                resultModel.setMessage("商品已存在! (goodsName重复)");
+                return resultModel;
             }
         }
         int result = GoodsMapper.updateGood(goodsVO);
         if (result == 1) {
-            resultModelUpdate.setStatus(0);
-            resultModelUpdate.setMessage("更新商品成功!");
+            resultModel.setStatus(0);
+            resultModel.setMessage("更新商品成功!");
         } else {
-            resultModelUpdate.setStatus(1);
-            resultModelUpdate.setMessage("error, 更新商品失败!");
+            resultModel.setStatus(1);
+            resultModel.setMessage("error, 更新商品失败!");
         }
-        return resultModelUpdate;
+        return resultModel;
     }
 
 }

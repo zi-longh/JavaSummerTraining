@@ -1,6 +1,6 @@
-package com.neu.edu.utils.goods;
+package com.neu.edu.utils;
 
-public class ResultModelUpdate {
+public class ResultModel {
     /* status、message */
     private int status;
     private String message;

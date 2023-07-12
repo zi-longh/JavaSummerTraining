@@ -1,7 +1,10 @@
-package com.neu.edu.utils.goods;
+package com.neu.edu.utils;
 
 import java.util.List;
 
+/**
+ * 用于查询的返回结果
+ */
 public class ResultModelGet<T> {
     /*
     status: 0表示成功，1表示失败

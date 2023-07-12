@@ -8,6 +8,7 @@ import com.neu.edu.utils.goods.ResultModelUpdate;
 import com.neu.edu.vo.GoodsVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.filter.CharacterEncodingFilter;
 
 import java.util.List;
 import java.util.Objects;
@@ -47,6 +48,7 @@ public class GoodsServiceImpl implements GoodsService {
             resultModelGetById.setMessage("参数错误, 查询商品失败!");
             resultModelGetById.setData(null);
         }
+        System.out.println(resultModelGetById.getData());
         return resultModelGetById;
     }
 

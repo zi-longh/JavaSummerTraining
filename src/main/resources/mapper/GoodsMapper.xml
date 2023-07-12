@@ -9,22 +9,22 @@
 </select>
 
 <select id="getGoodsById" resultType="GoodsVO">
-    select * from t_goods where id = #{goodsNum}
+    select * from t_goods where goodsNum = #{goodsNum}
 </select>
 
 <select id="getGoodsByName" resultType="GoodsVO">
     select * from t_goods where goodsName = #{goodsName}
 </select>
 
-<insert id="addGood" parameterType="vo.GoodsVO">
+<insert id="addGood" parameterType="GoodsVO">
     insert into t_goods (goodsName, goodsType, goodsPrice, goodsCost) values(#{goodsName}, #{goodsType}, #{goodsPrice}, #{goodsCost})
 </insert>
 
 <delete id="deleteGoodById" parameterType="int">
-    delete from t_goods where id = #{goodsNum}
+    delete from t_goods where goodsNum = #{goodsNum}
 </delete>
 
-<update id="updateGood" parameterType="vo.GoodsVO">
+<update id="updateGood" parameterType="GoodsVO">
     update t_goods set goodsName = #{goodsName}, goodsType = #{goodsType}, goodsPrice = #{goodsPrice}, goodsCost = #{goodsCost}
     where id = #{goodsNum}
 </update>

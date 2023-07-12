@@ -53,3 +53,4 @@
 0:0:0:0:0:0:0:1 - - [12/Jul/2023:18:20:28 +0800] "GET /goods/getGoodsById/6 HTTP/1.1" 200 170 http-bio-80-exec-9 4
 0:0:0:0:0:0:0:1 - - [12/Jul/2023:18:24:11 +0800] "POST /goods/addGood HTTP/1.1" 200 55 http-bio-80-exec-4 6
 0:0:0:0:0:0:0:1 - - [12/Jul/2023:18:26:56 +0800] "POST /goods/addGood HTTP/1.1" 200 55 http-bio-80-exec-2 1311
+0:0:0:0:0:0:0:1 - - [12/Jul/2023:18:30:54 +0800] "POST /goods/addGood HTTP/1.1" 200 55 http-bio-80-exec-2 1302

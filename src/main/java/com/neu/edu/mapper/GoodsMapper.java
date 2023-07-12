@@ -6,12 +6,19 @@ import java.util.List;
 
 public interface GoodsMapper {
 
-
-    int deleteByPrimaryKey(Integer id);
-    int insert(GoodsVO record);
-    int insertSelective(GoodsVO record);
-    GoodsVO selectByPrimaryKey(Integer id);
     List<GoodsVO> getAllGoodsInfo();
-    int updateByPrimaryKeySelective(GoodsVO record);
-    int updateByPrimaryKey(GoodsVO record);
+    GoodsVO getGoodsById(Integer goodsNum);
+    GoodsVO getGoodsByName(GoodsVO goodsVO);
+    int addGood(GoodsVO goodsVO);
+    int deleteGoodById(Integer goodsNum);
+    int updateGood(GoodsVO goodsVO);
+
+    /*
+    ResultModelGet<GoodsVO> getAllGoodsInfo();
+    ResultModelUpdate addGood(GoodsVO goodsVO);
+    ResultModelUpdate deleteGoodById(int id);
+    ResultModelUpdate updateGood(GoodsVO goodsVO);
+    ResultModelGetById<GoodsVO> getGoodsById(int id);
+    ResultModelGetById<GoodsVO> getGoodsSumById(int id);
+    */
 }

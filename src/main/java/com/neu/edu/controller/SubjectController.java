@@ -12,10 +12,14 @@ import java.util.List;
 // 等价于@Controller + @ResponseBody 依赖于jackson包
 public class SubjectController {
 
-    @Autowired
+    @Autowired // 作用：自动装配，自动注入
+
+
     @GetMapping(value = "/subjects")
     public ResultModel<List<SubjectVO>> getSubjects() {
         ResultModel<List<SubjectVO>> resultModel = new ResultModel<>();
+
+
         return resultModel;
     }
 }

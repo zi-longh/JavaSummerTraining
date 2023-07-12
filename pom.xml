@@ -75,7 +75,7 @@
         <version>2.2</version>
         <configuration>
           <!--tomcat端口-->
-          <port>8080</port>
+          <port>80</port>
           <!--上下文路径-->
           <path>/</path>
         </configuration>

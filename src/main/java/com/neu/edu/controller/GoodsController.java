@@ -14,10 +14,9 @@ public class GoodsController {
     @Autowired
     GoodsService goodsService;
 
-    @GetMapping(value = "/goods")
+    @GetMapping(value = "/goods/getAllGoodsInfo")
     public ResultModelGet<GoodsVO> getGoods() {
         ResultModelGet<GoodsVO> resultModelGet = new ResultModelGet<>();
-        // 调用service层的方法
         resultModelGet = goodsService.getAllGoodsInfo();
         return resultModelGet;
     }

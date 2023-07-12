@@ -1,6 +1,12 @@
 package com.neu.edu.vo;
 
 public class GoodsVO {
+    private Integer goodsNum;
+    private String goodsName;
+    private String goodsType;
+    private Double goodsPrice;
+    private Double goodsCost;
+
     public Integer getGoodsNum() {
         return goodsNum;
     }
@@ -42,11 +48,7 @@ public class GoodsVO {
     }
 
     /* goodsNum、goodsName、goodsType、goodsPrice、goodsCost */
-    private Integer goodsNum;
-    private String goodsName;
-    private String goodsType;
-    private Double goodsPrice;
-    private Double goodsCost;
+
 
     /* 重写toString */
     @Override

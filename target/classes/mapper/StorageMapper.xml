@@ -11,18 +11,23 @@
     select * from storage where storageNum = #{storageNum}
 </select>
 
-<insert id="addStor"
+<insert id="addStorage" parameterType="StorageVO">
+    insert into storage(storageNum, storageName, storageAddress)
+    values (#{storageNum}, #{storageName}, #{storageAddress})
+</insert>
 
+<insert id="addStorageWithoutId" parameterType="StorageVO">
+    insert into storage(storageName, storageAddress)
+    values (#{storageName}, #{storageAddress})
+</insert>
 
+<delete id="deleteStorageById" parameterType="int">
+    delete from storage where storageNum = #{storageNum}
+</delete>
 
-
-
-
-
-
-
-
-
-
+<update id="updateStorage" parameterType="StorageVO">
+    update storage set storageName = #{storageName}, storageAddress = #{storageAddress}
+    where storageNum = #{storageNum}
+</update>
 
 </mapper>

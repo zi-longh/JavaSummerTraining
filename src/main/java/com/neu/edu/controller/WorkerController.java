@@ -1,6 +1,5 @@
 package com.neu.edu.controller;
 
-import com.neu.edu.service.GoodsService;
 import com.neu.edu.service.WorkerService;
 import com.neu.edu.utils.ResultModel;
 import com.neu.edu.utils.ResultModelGet;

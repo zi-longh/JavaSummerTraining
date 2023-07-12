@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.neu.edu.mapper.SaleMapper">
+    <!--
+        getAllSalesInfo
+        getSaleInfoById
+        addSale
+        addSaleWithoutId
+        deleteSaleById
+        updateSale
+    -->
+    <select id="getAllSalesInfo" resultType="SaleVO">
+        select * from sale
+    </select>
+
+    <select id="getSaleInfoById" resultType="SaleVO">
+        select * from sale where saleNum = #{saleNum}
+    </select>
+
+</mapper>

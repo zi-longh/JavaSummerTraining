@@ -72,7 +72,7 @@ public class WorkerServiceImpl implements WorkerService {
     @Override
     public ResultModel addWorker(WorkerVO workerVO){
         ResultModel resultModel = new ResultModel();
-        if (workerVO == null) {
+        if (workerVO == null) { // 判断是否缺乏数据
             resultModel.setStatus(1);
             resultModel.setMessage("缺乏数据！添加员工失败!");
         } else {
@@ -102,7 +102,7 @@ public class WorkerServiceImpl implements WorkerService {
         WorkerVO worker = workerMapper.getWorkerInfoById(id);
         if (worker == null) {
             resultModel.setStatus(1);
-            resultModel.setMessage("员工不存在！删除员工失败!");
+            resultModel.setMessage("员工：" + id + "不存在！删除员工失败!");
             return resultModel;
         }
         workerMapper.deleteWorkerById(id);
@@ -127,7 +127,7 @@ public class WorkerServiceImpl implements WorkerService {
             WorkerVO worker = workerMapper.getWorkerInfoById(workerVO.getWorkerNum());
             if (worker == null) {
                 resultModel.setStatus(1);
-                resultModel.setMessage("员工不存在！更新员工失败!");
+                resultModel.setMessage("员工：" + workerVO.getWorkerNum() + "不存在！更新员工失败!");
                 return resultModel;
             }
             workerMapper.updateWorker(workerVO);

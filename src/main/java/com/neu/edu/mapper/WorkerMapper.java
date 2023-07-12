@@ -7,6 +7,7 @@ import java.util.List;
 public interface WorkerMapper {
     /*
         getAllWorkerInfo
+        getWorkerInfoById
         addWorker
         deleteWorkerById
         updateWorker

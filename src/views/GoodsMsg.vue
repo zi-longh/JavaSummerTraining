@@ -93,8 +93,8 @@
             <el-table-column label="操作" width="180">
               <template v-slot="scope">
                 <el-button size="small" @click="handleEdit(scope.row)"
-                  ><el-icon><el-icon-edit /></el-icon> 编辑</el-button
-                >
+                  >
+                  <el-icon><el-icon-edit /></el-icon> 编辑</el-button>
                 <el-button
                   size="small"
                   type="danger"
@@ -219,7 +219,7 @@
 </template>
 
 <script >
-import { Edit as ElIconEdit, Delete as ElIconDelete } from '@element-plus/icons'
+import { Edit ,Delete  } from '@element-plus/icons'
 import http from '../request/goods'
 
 export default {

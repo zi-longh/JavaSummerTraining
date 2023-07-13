@@ -34,6 +34,19 @@ public class SuppliersServiceImpl implements SuppliersService {
         resultModelGet.setData(suppliers);
         return resultModelGet;
     }
+    /**
+     * 获取供货商编号supplierNum, 用于添加供货商
+     */
+    @Override
+    public ResultModelGet<String> getSupplierNum(){
+        ResultModelGet<String> resultModelGet = new ResultModelGet<String>();
+        List<String> supplierNums = supplierMapper.getSupplierNum();
+        resultModelGet.setStatus(0);
+        resultModelGet.setMessage("查询供应商编号成功!");
+        resultModelGet.setData(supplierNums);
+        return resultModelGet;
+    }
+
 
     /**
      * 按页查询供货商

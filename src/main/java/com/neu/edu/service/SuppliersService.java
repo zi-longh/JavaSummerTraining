@@ -10,4 +10,6 @@ public interface SuppliersService {
     ResultModel addSupplier(SupplierVO supplierVO);
     ResultModel deleteSupplierById(int id);
     ResultModel updateSupplier(SupplierVO supplierVO);
+
+    ResultModelGet<String> getSupplierNum();
 }

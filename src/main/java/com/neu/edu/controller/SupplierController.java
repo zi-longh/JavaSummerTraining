@@ -35,6 +35,14 @@ public class SupplierController {
     }
 
     /**
+     * 获取供应商编号，返回list<String>
+     */
+    @GetMapping(value = "/getSupplierNum")
+    public ResultModelGet<String> getSupplierNum() {
+        return suppliersService.getSupplierNum();
+    }
+
+    /**
      * 添加供应商
      * @param supplierVO 供应商信息 不需要传入id(supplierNum), 会自动赋值
      */

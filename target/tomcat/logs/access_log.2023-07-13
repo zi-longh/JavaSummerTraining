@@ -1,0 +1,11 @@
+0:0:0:0:0:0:0:1 - - [13/Jul/2023:21:47:17 +0800] "POST /worker/addWorker HTTP/1.1" 400 968 http-bio-80-exec-2 550
+0:0:0:0:0:0:0:1 - - [13/Jul/2023:21:48:28 +0800] "POST /worker/addWorker HTTP/1.1" 200 55 http-bio-80-exec-4 688
+0:0:0:0:0:0:0:1 - - [13/Jul/2023:21:48:51 +0800] "POST /worker/addWorker HTTP/1.1" 400 968 http-bio-80-exec-5 4
+0:0:0:0:0:0:0:1 - - [13/Jul/2023:21:49:32 +0800] "POST /worker/addWorker HTTP/1.1" 200 55 http-bio-80-exec-7 19
+0:0:0:0:0:0:0:1 - - [13/Jul/2023:21:54:44 +0800] "GET /supplier/getSupplierNum HTTP/1.1" 200 88 http-bio-80-exec-10 14
+0:0:0:0:0:0:0:1 - - [13/Jul/2023:21:55:47 +0800] "GET /supplier/getSupplierNum HTTP/1.1" 200 88 http-bio-80-exec-3 4
+0:0:0:0:0:0:0:1 - - [13/Jul/2023:21:56:00 +0800] "GET /supplier/getSupplierNum HTTP/1.1" 200 88 http-bio-80-exec-3 3
+0:0:0:0:0:0:0:1 - - [13/Jul/2023:21:58:04 +0800] "GET /supplier/getSupplierNum HTTP/1.1" 200 185 http-bio-80-exec-2 1097
+0:0:0:0:0:0:0:1 - - [13/Jul/2023:22:00:44 +0800] "GET /data/getInfo1 HTTP/1.1" 200 1647 http-bio-80-exec-5 20
+0:0:0:0:0:0:0:1 - - [13/Jul/2023:22:01:31 +0800] "GET /data/getInfo2 HTTP/1.1" 200 3200 http-bio-80-exec-6 9
+0:0:0:0:0:0:0:1 - - [13/Jul/2023:22:01:35 +0800] "GET /data/getInfo3 HTTP/1.1" 200 1112 http-bio-80-exec-7 7

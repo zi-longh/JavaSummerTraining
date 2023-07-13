@@ -19,5 +19,6 @@ public interface SupplierMapper {
     int addSupplier(SupplierVO supplierVO);
     int deleteSupplierById(Integer supplierNum);
     int updateSupplier(SupplierVO supplierVO);
+    List<String> getSupplierNum();
 
 }

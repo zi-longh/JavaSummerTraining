@@ -2,10 +2,10 @@ com\neu\edu\vo\GoodsVO.class
 com\neu\edu\service\GoodsService.class
 com\neu\edu\service\impl\GoodsServiceImpl.class
 com\neu\edu\controller\GoodsController.class
+com\neu\edu\filter\CorsFilter.class
 com\neu\edu\utils\goods\ResultModelGet.class
 com\neu\edu\utils\goods\ResultModelGetById.class
 com\neu\edu\utils\goods\ResultModelUpdate.class
 com\neu\edu\mapper\GoodsMapper.class
 com\neu\edu\vo\SubjectVO.class
-com\neu\edu\datasource\DataSource.class
 com\neu\edu\utils\ResultModel.class

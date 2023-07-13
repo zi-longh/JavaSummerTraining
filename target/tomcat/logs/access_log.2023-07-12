@@ -59,3 +59,31 @@
 0:0:0:0:0:0:0:1 - - [12/Jul/2023:19:08:47 +0800] "GET /goods/getAllGoodsInfo HTTP/1.1" 200 356 http-bio-80-exec-5 22
 =======
 >>>>>>> newA
+127.0.0.1 - - [12/Jul/2023:21:25:46 +0800] "GET /api/getAllWorkersInfo HTTP/1.1" 404 949 http-bio-80-exec-1 1989
+127.0.0.1 - - [12/Jul/2023:21:26:02 +0800] "GET /api/getAllWorkersInfo HTTP/1.1" 404 949 http-bio-80-exec-2 3
+127.0.0.1 - - [12/Jul/2023:21:26:18 +0800] "GET /api/getAllGoodsInfo HTTP/1.1" 404 949 http-bio-80-exec-3 4
+127.0.0.1 - - [12/Jul/2023:21:27:16 +0800] "GET /api/getAllGoodsInfo HTTP/1.1" 404 949 http-bio-80-exec-5 7
+127.0.0.1 - - [12/Jul/2023:21:27:16 +0800] "GET /favicon.ico HTTP/1.1" 404 949 http-bio-80-exec-7 6
+127.0.0.1 - - [12/Jul/2023:21:28:51 +0800] "GET /api/getAllGoodsInfo HTTP/1.1" 404 949 http-bio-80-exec-9 7
+127.0.0.1 - - [12/Jul/2023:21:29:00 +0800] "GET /api/getAllGoodsInfo HTTP/1.1" 404 949 http-bio-80-exec-10 3
+127.0.0.1 - - [12/Jul/2023:21:29:30 +0800] "GET /api/goods/getAllGoodsInfo HTTP/1.1" 404 949 http-bio-80-exec-10 4
+127.0.0.1 - - [12/Jul/2023:21:31:14 +0800] "GET /api/goods/getAllGoodsInfo HTTP/1.1" 404 949 http-bio-80-exec-3 5
+127.0.0.1 - - [12/Jul/2023:21:51:23 +0800] "GET /api/goods/getAllGoodsInfo HTTP/1.1" 404 949 http-bio-80-exec-7 3
+127.0.0.1 - - [12/Jul/2023:21:51:34 +0800] "GET /api/goods/getAllGoodsInfo HTTP/1.1" 404 949 http-bio-80-exec-6 2
+127.0.0.1 - - [12/Jul/2023:21:52:27 +0800] "GET /goods/getAllGoodsInfo HTTP/1.1" 500 20934 http-bio-80-exec-1 861
+127.0.0.1 - - [12/Jul/2023:21:52:40 +0800] "GET /goods/getAllGoodsInfo HTTP/1.1" 500 21584 http-bio-80-exec-2 4026
+127.0.0.1 - - [12/Jul/2023:21:53:37 +0800] "GET /api/goods/getAllGoodsInfo HTTP/1.1" 404 949 http-bio-80-exec-10 3
+127.0.0.1 - - [12/Jul/2023:21:57:22 +0800] "GET /api/goods/getAllGoodsInfo HTTP/1.1" 404 949 http-bio-80-exec-3 2
+127.0.0.1 - - [12/Jul/2023:21:57:45 +0800] "GET /goods/getAllGoodsInfo HTTP/1.1" 500 21592 http-bio-80-exec-9 4040
+127.0.0.1 - - [12/Jul/2023:21:57:53 +0800] "GET /goods/getAllGoodsInfo HTTP/1.1" 500 21592 http-bio-80-exec-7 4036
+127.0.0.1 - - [12/Jul/2023:22:10:05 +0800] "GET /goods/getAllGoodsInfo HTTP/1.1" 500 21234 http-bio-80-exec-1 2146
+127.0.0.1 - - [12/Jul/2023:22:10:48 +0800] "GET /goods/getAllGoodsInfo HTTP/1.1" 500 21884 http-bio-80-exec-3 4037
+127.0.0.1 - - [12/Jul/2023:22:12:03 +0800] "GET /goods/getAllGoodsInfo HTTP/1.1" 500 21892 http-bio-80-exec-6 4031
+127.0.0.1 - - [12/Jul/2023:22:12:13 +0800] "GET /goods/getAllGoodsInfo HTTP/1.1" 500 21892 http-bio-80-exec-7 4032
+127.0.0.1 - - [12/Jul/2023:22:13:43 +0800] "GET /goods/getAllGoodsInfo HTTP/1.1" 500 21892 http-bio-80-exec-8 4019
+127.0.0.1 - - [12/Jul/2023:22:14:57 +0800] "GET /goods/getAllGoodsInfo HTTP/1.1" 500 21892 http-bio-80-exec-9 4028
+127.0.0.1 - - [12/Jul/2023:22:17:07 +0800] "GET /goods/getAllGoodsInfo HTTP/1.1" 500 21892 http-bio-80-exec-10 4017
+127.0.0.1 - - [12/Jul/2023:22:30:38 +0800] "GET /goods/getAllGoodsInfo HTTP/1.1" 500 11344 http-bio-80-exec-1 2731
+127.0.0.1 - - [12/Jul/2023:22:30:59 +0800] "GET /goods/getAllGoodsInfo HTTP/1.1" 500 11344 http-bio-80-exec-2 21
+127.0.0.1 - - [12/Jul/2023:22:32:43 +0800] "GET /goods/getAllGoodsInfo HTTP/1.1" 500 11344 http-bio-80-exec-3 46
+127.0.0.1 - - [12/Jul/2023:22:46:38 +0800] "GET /goods/getAllGoodsInfo HTTP/1.1" 200 439 http-bio-80-exec-1 2714

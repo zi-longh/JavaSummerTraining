@@ -35,7 +35,7 @@ public class SaleController {
      * @param saleVO 销售信息 可以不传入saleNum，saleNum为null会自动赋值
      */
     @PostMapping(value = "/sale/addSale")
-    public ResultModel addSale(SaleVO saleVO) {
+    public ResultModel addSale(@RequestBody SaleVO saleVO) {
         return saleService.addSale(saleVO);
     }
 
@@ -43,7 +43,7 @@ public class SaleController {
      * 删除销售
      * @param saleNum 销售编号
      */
-    @PostMapping(value = "/sale/deleteSaleById/{saleNum}")
+    @DeleteMapping(value = "/sale/deleteSaleById/{saleNum}")
     public ResultModel deleteSaleById(@PathVariable("saleNum") int saleNum) {
         return saleService.deleteSaleById(saleNum);
     }
@@ -53,7 +53,7 @@ public class SaleController {
      * @param saleVO 销售信息 必须传入saleNum
      */
     @PutMapping(value = "/sale/updateSale")
-    public ResultModel updateSale(SaleVO saleVO) {
+    public ResultModel updateSale(@RequestBody SaleVO saleVO) {
         return saleService.updateSale(saleVO);
     }
 

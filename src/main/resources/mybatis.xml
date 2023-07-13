@@ -6,6 +6,7 @@
 
 <configuration>
     <typeAliases>
-        <package name="com.neu.edu.vo"/>
+        <package name="com.neu.edu.vo" />
+<!--        <typeAlias type="com.neu.edu.vo.GoodsVO" alias="goodsvo"/>-->
     </typeAliases>
 </configuration>

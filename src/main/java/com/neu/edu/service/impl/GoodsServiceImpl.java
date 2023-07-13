@@ -8,6 +8,7 @@ import com.neu.edu.utils.ResultModelGetById;
 import com.neu.edu.vo.GoodsVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import sun.tools.jconsole.JConsole;
 
 import java.util.List;
 import java.util.Objects;
@@ -112,6 +113,7 @@ public class GoodsServiceImpl implements GoodsService {
     @Override
     public ResultModel updateGood(GoodsVO goodsVO){
         ResultModel resultModel = new ResultModel();
+        System.out.println(goodsVO.getGoodsNum());
         GoodsVO goods = GoodsMapper.getGoodsById(goodsVO.getGoodsNum()); // 通过id查询商品, 判断商品是否存在
         if (goods == null) {
             resultModel.setStatus(1);

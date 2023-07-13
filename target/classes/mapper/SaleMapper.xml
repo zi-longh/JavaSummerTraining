@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.neu.edu.mapper.SaleMapper">
+    <!--
+        getAllSalesInfo
+        getSaleInfoById
+        addSale
+        addSaleWithoutId
+        deleteSaleById
+        updateSale
+    -->
+    <select id="getAllSalesInfo" resultType="SaleVO">
+        select * from sale
+    </select>
+
+    <select id="getSaleInfoById" resultType="SaleVO">
+        select * from sale where id = #{id}
+    </select>
+
+    <insert id="addSale" parameterType="SaleVO">
+        insert into sale(id, emp_workerNum, goo_goodsNum, saleTime, saleNum)
+        values (#{id}, #{emp_workerNum}, #{goo_goodsNum}, #{saleTime}, #{saleNum})
+    </insert>
+
+    <insert id="addSaleWithoutId" parameterType="SaleVO">
+        insert into sale(emp_workerNum, goo_goodsNum, saleTime, saleNum)
+        values (#{emp_workerNum}, #{goo_goodsNum}, #{saleTime}, #{saleNum})
+    </insert>
+
+    <delete id="deleteSaleById" parameterType="int">
+        delete from sale where id = #{id}
+    </delete>
+
+    <update id="updateSale" parameterType="SaleVO">
+        update sale set emp_workerNum = #{emp_workerNum}, goo_goodsNum = #{goo_goodsNum}, saleTime = #{saleTime}, saleNum = #{saleNum}
+        where id = #{id}
+    </update>
+
+</mapper>

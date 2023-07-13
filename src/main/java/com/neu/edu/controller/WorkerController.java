@@ -35,7 +35,7 @@ public class WorkerController {
      * @param workerVO 员工信息 不需要传入workerNum
      */
     @PostMapping(value = "/worker/addWorker")
-    public ResultModel addWorker(WorkerVO workerVO) {
+    public ResultModel addWorker(@RequestBody WorkerVO workerVO) {
         return workerService.addWorker(workerVO);
     }
 
@@ -53,7 +53,7 @@ public class WorkerController {
      * @param workerVO 员工信息
      */
     @PutMapping(value = "/worker/updateWorker")
-    public ResultModel updateWorker(WorkerVO workerVO) {
+    public ResultModel updateWorker(@RequestBody WorkerVO workerVO) {
         return workerService.updateWorker(workerVO);
     }
 

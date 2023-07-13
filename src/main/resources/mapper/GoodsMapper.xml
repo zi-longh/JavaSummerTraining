@@ -26,7 +26,7 @@
 
 <update id="updateGood" parameterType="GoodsVO">
     update goods set goodsName = #{goodsName}, goodsType = #{goodsType}, goodsPrice = #{goodsPrice}, goodsCost = #{goodsCost}
-    where id = #{goodsNum}
+    where goodsNum = #{goodsNum}
 </update>
 
 </mapper>

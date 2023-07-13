@@ -26,7 +26,7 @@ public class GoodsController {
     }
 
     @PostMapping(value = "/goods/addGood")
-    public ResultModel addGood(GoodsVO goodsVO) {
+    public ResultModel addGood(@RequestBody GoodsVO goodsVO) {
 //        System.out.println(goodsVO.getGoodsName());
         return goodsService.addGood(goodsVO);
     }
@@ -37,7 +37,7 @@ public class GoodsController {
     }
 
     @PutMapping(value = "/goods/updateGood")
-    public ResultModel updateGoods(GoodsVO goodsVO) {
+    public ResultModel updateGoods(@RequestBody GoodsVO goodsVO) {
         return goodsService.updateGood(goodsVO);
     }
 

@@ -38,7 +38,7 @@ public class SupplierController {
      * @param supplierVO 供应商信息 不需要传入id(supplierNum), 会自动赋值
      */
     @PostMapping(value = "/supplier/addSupplier")
-    public ResultModel addSupplier(SupplierVO supplierVO) {
+    public ResultModel addSupplier(@RequestBody SupplierVO supplierVO) {
         return suppliersService.addSupplier(supplierVO);
     }
 
@@ -46,7 +46,7 @@ public class SupplierController {
      * 删除供应商
      * @param supplierNum 供应商编号
      */
-    @PostMapping(value = "/supplier/deleteSupplierById/{supplierNum}")
+    @DeleteMapping(value = "/supplier/deleteSupplierById/{supplierNum}")
     public ResultModel deleteSupplierById(@PathVariable("supplierNum") int supplierNum) {
         return suppliersService.deleteSupplierById(supplierNum);
     }
@@ -56,7 +56,7 @@ public class SupplierController {
      * @param supplierVO 供应商信息 必须传入id(supplierNum)
      */
     @PutMapping(value = "/supplier/updateSupplier")
-    public ResultModel updateSupplier(SupplierVO supplierVO) {
+    public ResultModel updateSupplier(@RequestBody SupplierVO supplierVO) {
         return suppliersService.updateSupplier(supplierVO);
     }
 

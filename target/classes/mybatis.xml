@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- mybatis-config.xml，MyBatis核心配置文件-->
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+    <typeAliases>
+        <package name="com.neu.edu.vo" />
+<!--        <typeAlias type="com.neu.edu.vo.GoodsVO" alias="goodsvo"/>-->
+    </typeAliases>
+</configuration>

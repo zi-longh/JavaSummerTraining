@@ -16,11 +16,11 @@
         select * from supplier
     </select>
 
-    <select id="getSupplierById" resultType="SupplierVO">
+    <select id="getSupplierInfoById" resultType="SupplierVO">
         select * from supplier where supplierNum = #{supplierNum}
     </select>
 
-    <select id="getSupplierByName" resultType="SupplierVO">
+    <select id="getSupplierInfoByName" resultType="SupplierVO">
         select * from supplier where supplierName = #{supplierName}
     </select>
 

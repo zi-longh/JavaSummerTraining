@@ -82,13 +82,17 @@ public class SaleServiceImpl implements SaleService {
                 resultModel.setMessage("id: " + saleVO.getId() + " 已存在, 添加销售记录失败!");
             }else{
                 // id不存在, 添加销售记录
-                saleMapper.addSale(saleVO);
+
+                System.out.println(saleVO.toString());
+                System.out.println(saleMapper.addSale(saleVO));
                 resultModel.setStatus(0);
                 resultModel.setMessage("添加销售记录成功!");
             }
         }else{
+
             // 未传入id, 添加销售记录
-            saleMapper.addSaleWithoutId(saleVO);
+            System.out.println(""+saleVO.toString());
+            System.out.println(saleMapper.addSaleWithoutId(saleVO));
             resultModel.setStatus(0);
             resultModel.setMessage("添加销售记录成功!");
         }

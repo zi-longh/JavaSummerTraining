@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="JavaSummerTraining:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>JavaSummerTraining</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="Myday06Integration.war">
+      <element id="artifact" artifact-name="JavaSummerTraining:war exploded" />
+    </root>
+  </artifact>
+</component>

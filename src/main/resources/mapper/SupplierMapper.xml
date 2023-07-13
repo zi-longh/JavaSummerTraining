@@ -13,27 +13,27 @@
     */
 -->
     <select id="getAllSuppliersInfo" resultType="SupplierVO">
-        select * from supplier
+        select * from suppliers
     </select>
 
     <select id="getSupplierById" resultType="SupplierVO">
-        select * from supplier where supplierNum = #{supplierNum}
+        select * from suppliers where supplierNum = #{supplierNum}
     </select>
 
-    <select id="getSupplierByName" resultType="SupplierVO">
-        select * from supplier where supplierName = #{supplierName}
+    <select id="getSupplierInfoByName" resultType="SupplierVO">
+        select * from suppliers where supplierName = #{supplierName}
     </select>
 
     <insert id="addSupplier" parameterType="SupplierVO">
-        insert into supplier (supplierName, supplierAddress, supplierPhone) values(#{supplierName}, #{supplierAddress}, #{supplierPhone})
+        insert into suppliers (supplierName, supplierAddress, supplierPhone) values(#{supplierName}, #{supplierAddress}, #{supplierPhone})
     </insert>
 
     <delete id="deleteSupplierById" parameterType="int">
-        delete from supplier where supplierNum = #{supplierNum}
+        delete from suppliers where supplierNum = #{supplierNum}
     </delete>
 
     <update id="updateSupplier" parameterType="SupplierVO">
-        update supplier set supplierName = #{supplierName}, supplierAddress = #{supplierAddress}, supplierPhone = #{supplierPhone}
+        update suppliers set supplierName = #{supplierName}, supplierAddress = #{supplierAddress}, supplierPhone = #{supplierPhone}
         where supplierNum = #{supplierNum}
     </update>
 

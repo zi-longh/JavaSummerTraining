@@ -55,4 +55,15 @@ public class ProvideVO {
     public void setSupplierSum(Integer supplierSum) {
         this.supplierSum = supplierSum;
     }
+
+    @Override
+    public String toString() {
+        return "ProvideVO{" +
+                "id=" + id +
+                ", sup_supplierNum=" + sup_supplierNum +
+                ", goo_goodsNum=" + goo_goodsNum +
+                ", supplierDate='" + supplierDate + '\'' +
+                ", supplierSum=" + supplierSum +
+                '}';
+    }
 }

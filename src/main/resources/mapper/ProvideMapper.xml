@@ -15,7 +15,7 @@
         select * from provide
     </select>
 
-    <select id="getProvideById" resultType="ProvideVO">
+    <select id="getProvideInfoById" resultType="ProvideVO">
         select * from provide where id = #{id}
     </select>
 

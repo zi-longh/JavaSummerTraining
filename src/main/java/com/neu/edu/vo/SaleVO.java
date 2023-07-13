@@ -54,4 +54,15 @@ public class SaleVO {
     public void setSaleNum(Integer saleNum) {
         this.saleNum = saleNum;
     }
+
+    @Override
+    public String toString() {
+        return "SaleVO{" +
+                "id=" + id +
+                ", emp_workerNum=" + emp_workerNum +
+                ", goo_goodsNum=" + goo_goodsNum +
+                ", saleTime='" + saleTime + '\'' +
+                ", saleNum=" + saleNum +
+                '}';
+    }
 }

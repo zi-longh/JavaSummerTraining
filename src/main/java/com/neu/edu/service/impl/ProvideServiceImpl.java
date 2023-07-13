@@ -72,6 +72,7 @@ public class ProvideServiceImpl implements ProvideService {
     @Override
     public ResultModel addProvide(ProvideVO provideVO){
         ResultModel resultModel = new ResultModel();
+        System.out.println(provideVO.toString());
         // 判断是否缺乏必要信息（可以不用含有id）
         if(provideVO == null || provideVO.getGoo_goodsNum() == null || provideVO.getSup_supplierNum() == null || provideVO.getSupplierDate() == null){
             resultModel.setStatus(1);

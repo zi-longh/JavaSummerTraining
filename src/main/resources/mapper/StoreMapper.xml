@@ -16,7 +16,7 @@
         select * from store
     </select>
 
-    <select id="getStoreById" resultType="StoreVO">
+    <select id="getStoreInfoById" resultType="StoreVO">
         select * from store where id = #{id}
     </select>
 

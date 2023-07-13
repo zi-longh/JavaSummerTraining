@@ -48,7 +48,13 @@ public class SaleServiceImpl implements SaleService {
         } else {
             resultModelGet.setStatus(0);
             resultModelGet.setMessage("查询销售记录成功!");
-            resultModelGet.setDataTotal(size);
+            int dataSize;
+            if(page == pageTotal) {
+                dataSize = dataTotal - (page - 1) * size;
+            } else {
+                dataSize = size;
+            }
+            resultModelGet.setDataTotal(dataSize);
             resultModelGet.setData(resultModelGet.getData().subList((page - 1) * size, Math.min(page * size, dataTotal)));
         }
         return resultModelGet;

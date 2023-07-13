@@ -1,0 +1,224 @@
+
+ /* 公共样式 */
+ body{
+   font-size: 14px;
+   
+ }
+ a{
+   color: #fff;
+   text-decoration: none;
+ }
+
+/* 左侧 */
+
+   /* 左侧背景  */
+    .el-aside {
+      background: url("../images/leftBG.png") ;
+      background-size: 100% ;
+       }
+       
+
+       /* 隐藏滚动条 */
+    .el-aside::-webkit-scrollBar{
+        display:none;
+      } 
+   
+
+  /* 顶部标题 */
+    #asideTop{
+      text-align: right;
+      color: #fff;
+      padding-right: 20px;
+    }
+    #asideTop h2{
+      font-family: "黑体";
+      font-size: 22px;
+      padding:20px 0;
+    }
+    #asideTop span{
+      color:#888888;
+    }
+
+  /* 菜单 */
+    .el-menu{
+        border: none;
+        background-color:transparent;
+        width: 210px;
+        /* margin-left:20px; */
+    }
+    .el-submenu{
+        margin-bottom: 10px;
+    }
+/* 菜单标题 */
+  .el-submenu__title{
+    /* background: url("../images/menuBG.png") repeat-x; */
+    height:33px;
+    line-height: 33px;
+    color: #fff;
+    text-align: center;
+    border-radius: 4px 0 0 4px;
+  }
+/* 子菜单 */
+.el-menu--inline{
+    margin-left: 0px;
+  }
+
+/* 子菜单 */
+.el-submenu .el-menu-item{
+    color: #aaa;
+    height: 33px;
+    line-height: 33px;
+    text-align: center;
+    border-radius: 4px 0 0 4px;
+    margin-bottom: 5px;
+    padding: 0px 20px;
+}
+.el-submenu .el-menu-item a{
+  color: #aaa;
+}
+/*焦点样式  失焦消失*/
+ .el-menu-item:focus{
+    color: red;
+}
+/* 鼠标经过  鼠标移入 移除消失*/
+.el-menu-item:hover{
+    background-color: rgba(255,255, 255, 0.5)
+}
+/* 激活样式  鼠标点击时  */
+.el-menu-item.is-active{
+     background-color: rgba(255,255, 255, 0.5);
+     color:#fff;
+     font-weight: bold;
+}
+.el-menu-item.is-active a{
+   color:#fff;
+}
+
+/* 右边 */
+.el-header{
+  background-color:#f8f8f8;
+  color: #333;
+}
+.el-header h1{
+    font-size: 22px;
+    margin: 0;
+    margin-top:34px;
+    margin-bottom: 10px;
+}
+.el-header p{
+    margin: 0;
+    margin-bottom: 20px;
+    
+}
+
+/* 右侧 内容 */
+/* .el-main {
+  background-color:#f8f8f8;
+} */
+.el-main .el-card__header{
+  color: #333;
+  height: 40px;
+  line-height: 40px;
+  /* 设置渐变 */
+  background: linear-gradient(#eee,#e6e6e6)
+}
+.el-main .el-card__header h3{
+  display: inline-block;
+  margin: 0px;
+}
+.el-button--text{
+  color: #333;
+}
+.el-alert{
+  margin-bottom:16px;
+}
+.el-main .el-alert--warning{
+  background-color: #dbe3ff;
+}
+.el-table .cell a{
+  color:#57a000;
+}
+
+/* card组件的样式 */
+.el-card__header{
+  padding: 0px 15px !important;
+}
+
+.el-footer p{
+  background-color:#f8f8f8;
+  color: #333;
+  margin: 0px;
+  border-top:1px solid #ccc;
+  line-height: 60px;
+}
+
+
+
+body > .el-container {
+  margin-bottom: 40px;
+}
+
+.el-container:nth-child(5) .el-aside,
+.el-container:nth-child(6) .el-aside {
+  line-height: 260px;
+}
+
+.el-container:nth-child(7) .el-aside {
+  line-height: 320px;
+}
+
+/* 输入框的宽度 */
+/* .el-input{
+  width: 30%
+} */
+.el-input--suffix{
+  width: 60%
+}
+/* 模态框 */
+#mydialog .el-input{
+  width: 80%
+}
+/* 用户增加页面的输入框宽度 */
+/* #goodadd .el-input */
+/* #addusers,{
+  width: 30%
+} */
+/* 商品管理页 */
+#searchBox{
+  border: 1px solid #ccc;
+  height: 1px;
+}
+#goodsMsgInput .el-input{
+  width:100%
+}
+#workerMsgInput .el-input{
+  width:100%
+}
+#MsgInput .el-input{
+  width:100%
+}
+.el-dialog .el-form .el-form-item {
+  width:85%;
+}
+.el-dialog .el-form .el-form-item .el-select {
+  width:350px;
+} 
+.el-select-dropdown {
+  min-width:210px !important;
+}
+/* .el-select{
+  width:350px;
+} */
+.pagerBox{
+  margin-top:10px;
+}
+/* html {overflow: hidden;height: 100%;} */
+body {overflow: hidden;height: 100%;}
+
+.el-table{
+  width:100%;
+}
+/* .el-table .cell{
+  height:20px!important;
+} */
+

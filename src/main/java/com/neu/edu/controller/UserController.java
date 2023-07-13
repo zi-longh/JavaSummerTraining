@@ -22,7 +22,7 @@ public class UserController {
      * @param userVO 用户信息 必须传入用户名和密码
      */
     @PostMapping(value = "/user/login")
-    public ResultModelGetById<UserVO> login(UserVO userVO) {
+    public ResultModelGetById<UserVO> login(@RequestBody UserVO userVO) {
         return userService.login(userVO.getUserName(), userVO.getPassword());
     }
 
@@ -40,7 +40,7 @@ public class UserController {
      * @param userVO 用户信息 必须传入用户名和密码
      */
     @PostMapping(value = "/user/register")
-    public ResultModel register(UserVO userVO) {
+    public ResultModel register(@RequestBody UserVO userVO) {
         return userService.register(userVO);
     }
 
@@ -49,7 +49,7 @@ public class UserController {
      * @param userVO 用户信息 必须传入用户名
      */
     @PutMapping(value = "/user/updateUser")
-    public ResultModel updateUser(UserVO userVO) {
+    public ResultModel updateUser(@RequestBody UserVO userVO) {
         return userService.updateUser(userVO);
     }
 
@@ -57,7 +57,7 @@ public class UserController {
      * 删除用户
      * @param userName 用户名
      */
-    @PostMapping(value = "/user/deleteUserById/{userName}")
+    @DeleteMapping(value = "/user/deleteUserById/{userName}")
     public ResultModel deleteUserById(@PathVariable("userName") String userName) {
         return userService.deleteUserById(userName);
     }

@@ -76,17 +76,31 @@ public class WorkerServiceImpl implements WorkerService {
             resultModel.setStatus(1);
             resultModel.setMessage("缺乏数据！添加员工失败!");
         } else {
-            // 判断员工是否已经存在
-            WorkerVO worker = workerMapper.getWorkerInfoById(workerVO.getWorkerNum());
+            // 判断员工姓名是否存在
+            WorkerVO worker = workerMapper.getWorkerInfoByName(workerVO.getName());
             if (worker != null) {
                 resultModel.setStatus(1);
-                resultModel.setMessage("员工已存在！添加员工失败!");
+                resultModel.setMessage("员工：" + workerVO.getName() + "已存在！添加员工失败!");
                 return resultModel;
             }
-            workerMapper.addWorker(workerVO);
-            resultModel.setStatus(0);
-            resultModel.setMessage("添加员工成功!");
+
+            // 判断是否传入了员工id
+            if (workerVO.getWorkerNum() == null) {
+                // 没有传入员工id，自动生成员工id
+                workerMapper.addWorkerWithoutId(workerVO);
+            } else {
+                // 传入了员工id，判断员工是否存在
+                worker = workerMapper.getWorkerInfoById(workerVO.getWorkerNum());
+                if (worker != null) {
+                    resultModel.setStatus(1);
+                    resultModel.setMessage("员工：" + workerVO.getWorkerNum() + "已存在！添加员工失败!");
+                    return resultModel;
+                }
+                workerMapper.addWorker(workerVO);
+            }
         }
+        resultModel.setStatus(0);
+        resultModel.setMessage("添加员工成功!");
         return resultModel;
     }
 

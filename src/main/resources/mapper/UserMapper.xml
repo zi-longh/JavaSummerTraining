@@ -12,23 +12,23 @@
     */
 -->
     <select id="login" resultType="UserVO">
-        select * from user where username=#{username}
+        select * from user where username=#{userName}
     </select>
 
     <select id="getUserInfoById" resultType="UserVO">
-        select * from user where username=#{username}
+        select * from user where username=#{userName}
     </select>
 
     <insert id="register" parameterType="UserVO">
-        insert into user values(#{username},#{password},#{office})
+        insert into user values(#{userName},#{password},#{office})
     </insert>
 
-    <delete id="delete" parameterType="String">
-        delete from user where username=#{username}
+    <delete id="deleteUserById" parameterType="String">
+        delete from user where username=#{userName}
     </delete>
 
     <update id="updateUser" parameterType="UserVO">
-        update user set password=#{password},office=#{office} where username=#{username}
+        update user set password=#{password},office=#{office} where username=#{userName}
     </update>
 
 </mapper>

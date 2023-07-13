@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
+@RequestMapping(value = "/worker")
 public class WorkerController {
     @Autowired
     WorkerService workerService;
@@ -15,7 +16,7 @@ public class WorkerController {
     /**
      * 获取所有员工信息
      */
-    @GetMapping(value = "/worker/getAllWorkersInfo")
+    @GetMapping(value = "/getAllWorkersInfo")
     public ResultModelGet<WorkerVO> getAllWorkerInfo() {
         return workerService.getAllWorkersInfo();
     }
@@ -25,7 +26,7 @@ public class WorkerController {
      * @param page 页数
      * @param size 每页大小
      */
-    @GetMapping(value = "/worker/getWorkersInfoByPage")
+    @GetMapping(value = "/getWorkersInfoByPage")
     public ResultModelGet<WorkerVO> getWorkersInfoByPage(int page, @RequestParam(value = "size", required = true) int size) {
         return workerService.getWorkersInfoByPage(page, size);
     }
@@ -34,7 +35,7 @@ public class WorkerController {
      * 添加员工
      * @param workerVO 员工信息 可以不传入workerNum
      */
-    @PostMapping(value = "/worker/addWorker")
+    @PostMapping(value = "/addWorker")
     public ResultModel addWorker(@RequestBody WorkerVO workerVO) {
         return workerService.addWorker(workerVO);
     }
@@ -43,7 +44,7 @@ public class WorkerController {
      * 删除员工
      * @param workerNum 员工编号
      */
-    @DeleteMapping(value = "/worker/deleteWorkerById/{workerNum}")
+    @DeleteMapping(value = "/deleteWorkerById/{workerNum}")
     public ResultModel deleteWorkerById(@PathVariable("workerNum") int workerNum) {
         return workerService.deleteWorkerById(workerNum);
     }
@@ -52,7 +53,7 @@ public class WorkerController {
      * 更新员工信息
      * @param workerVO 员工信息
      */
-    @PutMapping(value = "/worker/updateWorker")
+    @PutMapping(value = "/updateWorker")
     public ResultModel updateWorker(@RequestBody WorkerVO workerVO) {
         return workerService.updateWorker(workerVO);
     }

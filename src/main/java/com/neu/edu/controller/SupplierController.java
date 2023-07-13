@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
+@RequestMapping(value = "/supplier")
 public class SupplierController {
     @Autowired
     SuppliersService suppliersService;
@@ -18,7 +19,7 @@ public class SupplierController {
     /**
      * 获取所有供应商信息
      */
-    @GetMapping(value = "/supplier/getAllSuppliersInfo")
+    @GetMapping(value = "/getAllSuppliersInfo")
     public ResultModelGet<SupplierVO> getAllSuppliersInfo() {
         return suppliersService.getAllSuppliersInfo();
     }
@@ -28,7 +29,7 @@ public class SupplierController {
      * @param page 页数
      * @param size 每页大小
      */
-    @GetMapping(value = "/supplier/getSuppliersInfoByPage")
+    @GetMapping(value = "/getSuppliersInfoByPage")
     public ResultModelGet<SupplierVO> getSuppliersInfoByPage(int page, @RequestParam(value = "size", defaultValue = "2") int size) {
         return suppliersService.getSuppliersInfoByPage(page, size);
     }
@@ -37,7 +38,7 @@ public class SupplierController {
      * 添加供应商
      * @param supplierVO 供应商信息 不需要传入id(supplierNum), 会自动赋值
      */
-    @PostMapping(value = "/supplier/addSupplier")
+    @PostMapping(value = "/addSupplier")
     public ResultModel addSupplier(@RequestBody SupplierVO supplierVO) {
         return suppliersService.addSupplier(supplierVO);
     }
@@ -46,7 +47,7 @@ public class SupplierController {
      * 删除供应商
      * @param supplierNum 供应商编号
      */
-    @DeleteMapping(value = "/supplier/deleteSupplierById/{supplierNum}")
+    @DeleteMapping(value = "/deleteSupplierById/{supplierNum}")
     public ResultModel deleteSupplierById(@PathVariable("supplierNum") int supplierNum) {
         return suppliersService.deleteSupplierById(supplierNum);
     }
@@ -55,8 +56,8 @@ public class SupplierController {
      * 更新供应商信息
      * @param supplierVO 供应商信息 必须传入id(supplierNum)
      */
-    @PutMapping(value = "/supplier/updateSupplier")
-    public ResultModel updateSupplier(SupplierVO supplierVO) {
+    @PutMapping(value = "/updateSupplier")
+    public ResultModel updateSupplier(@RequestBody SupplierVO supplierVO) {
         return suppliersService.updateSupplier(supplierVO);
     }
 

@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
+@RequestMapping(value = "/sale")
 public class SaleController {
     @Autowired
     SaleService saleService;
@@ -15,7 +16,7 @@ public class SaleController {
     /**
      * 获取所有销售信息
      */
-    @GetMapping(value = "/sale/getAllSalesInfo")
+    @GetMapping(value = "/getAllSalesInfo")
     public ResultModelGet<SaleVO> getAllSalesInfo() {
         return saleService.getAllSalesInfo();
     }
@@ -25,7 +26,7 @@ public class SaleController {
      * @param page 页数
      * @param size 每页大小
      */
-    @GetMapping(value = "/sale/getSalesInfoByPage")
+    @GetMapping(value = "/getSalesInfoByPage")
     public ResultModelGet<SaleVO> getSalesInfoByPage(int page, @RequestParam(value = "size", defaultValue = "2") int size) {
         return saleService.getSalesInfoByPage(page, size);
     }
@@ -34,8 +35,8 @@ public class SaleController {
      * 添加销售
      * @param saleVO 销售信息 可以不传入saleNum，saleNum为null会自动赋值
      */
-    @PostMapping(value = "/sale/addSale")
-    public ResultModel addSale(SaleVO saleVO) {
+    @PostMapping(value = "/addSale")
+    public ResultModel addSale(@RequestBody SaleVO saleVO) {
         return saleService.addSale(saleVO);
     }
 
@@ -43,7 +44,7 @@ public class SaleController {
      * 删除销售
      * @param saleNum 销售编号
      */
-    @PostMapping(value = "/sale/deleteSaleById/{saleNum}")
+    @DeleteMapping(value = "/deleteSaleById/{saleNum}")
     public ResultModel deleteSaleById(@PathVariable("saleNum") int saleNum) {
         return saleService.deleteSaleById(saleNum);
     }
@@ -52,8 +53,8 @@ public class SaleController {
      * 更新销售信息
      * @param saleVO 销售信息 必须传入saleNum
      */
-    @PutMapping(value = "/sale/updateSale")
-    public ResultModel updateSale(SaleVO saleVO) {
+    @PutMapping(value = "/updateSale")
+    public ResultModel updateSale(@RequestBody SaleVO saleVO) {
         return saleService.updateSale(saleVO);
     }
 

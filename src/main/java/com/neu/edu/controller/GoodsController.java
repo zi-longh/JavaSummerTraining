@@ -8,31 +8,32 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
+@RequestMapping(value = "/goods")
 public class GoodsController {
     @Autowired
     GoodsService goodsService;
 
-    @GetMapping(value = "/goods/getAllGoodsInfo")
+    @GetMapping(value = "/getAllGoodsInfo")
     public ResultModelGet<GoodsVO> getGoods() {
         return goodsService.getAllGoodsInfo();
     }
-    @GetMapping(value = "/goods/getGoodsById/{id}")
+    @GetMapping(value = "/getGoodsById/{id}")
     public ResultModelGetById<GoodsVO> getGoodsById(@PathVariable("id") int id) {
         return goodsService.getGoodsById(id);
     }
 
     // todo: 2021/7/27 该接口未实现！
-    @GetMapping(value = "/goods/getGoodsSumById/{id}")
+    @GetMapping(value = "/getGoodsSumById/{id}")
     public ResultModelGetById<GoodsVO> getGoodsSumById(@PathVariable("id") int id) {
         return goodsService.getGoodsSumById(id);
     }
 
-    @PostMapping(value = "/goods/addGood")
+    @PostMapping(value = "/addGood")
     public ResultModel addGood(@RequestBody GoodsVO goodsVO) {
         return goodsService.addGood(goodsVO);
     }
 
-    @DeleteMapping(value = "/goods/deleteGoodById/{id}")
+    @DeleteMapping(value = "/deleteGoodById/{id}")
     public ResultModel deleteGoodsById(@PathVariable("id") int id) {
         return goodsService.deleteGoodById(id);
     }
@@ -41,7 +42,7 @@ public class GoodsController {
      * 更新商品信息
      * @param goodsVO 商品信息 必须传入id
      */
-    @PutMapping(value = "/goods/updateGood")
+    @PutMapping(value = "/updateGood")
     public ResultModel updateGoods(@RequestBody GoodsVO goodsVO) {
         return goodsService.updateGood(goodsVO);
     }

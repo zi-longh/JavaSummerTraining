@@ -13,6 +13,7 @@ import com.neu.edu.vo.StoreVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 @RestController
+@RequestMapping(value = "/user")
 public class UserController {
     @Autowired
     UserService userService;
@@ -21,7 +22,7 @@ public class UserController {
      * 登录
      * @param userVO 用户信息 必须传入用户名和密码
      */
-    @PostMapping(value = "/user/login")
+    @PostMapping(value = "/login")
     public ResultModelGetById<UserVO> login(@RequestBody UserVO userVO) {
         return userService.login(userVO.getUserName(), userVO.getPassword());
     }
@@ -30,7 +31,7 @@ public class UserController {
      * 获取用户信息
      * @param userName 用户名
      */
-    @GetMapping(value = "/user/getUserInfoById/{userName}")
+    @GetMapping(value = "/getUserInfoById/{userName}")
     public ResultModelGetById<UserVO> getUserInfoById(@PathVariable("userName") String userName) {
         return userService.getUserInfoById(userName);
     }
@@ -39,7 +40,7 @@ public class UserController {
      * 注册
      * @param userVO 用户信息 必须传入用户名和密码
      */
-    @PostMapping(value = "/user/register")
+    @PostMapping(value = "/register")
     public ResultModel register(@RequestBody UserVO userVO) {
         return userService.register(userVO);
     }
@@ -48,7 +49,7 @@ public class UserController {
      * 更新用户信息
      * @param userVO 用户信息 必须传入用户名
      */
-    @PutMapping(value = "/user/updateUser")
+    @PutMapping(value = "/updateUser")
     public ResultModel updateUser(@RequestBody UserVO userVO) {
         return userService.updateUser(userVO);
     }
@@ -57,7 +58,7 @@ public class UserController {
      * 删除用户
      * @param userName 用户名
      */
-    @DeleteMapping(value = "/user/deleteUserById/{userName}")
+    @DeleteMapping(value = "/deleteUserById/{userName}")
     public ResultModel deleteUserById(@PathVariable("userName") String userName) {
         return userService.deleteUserById(userName);
     }

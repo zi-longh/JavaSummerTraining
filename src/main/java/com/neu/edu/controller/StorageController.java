@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
+@RequestMapping(value = "/storage")
 public class StorageController {
 
     @Autowired
@@ -16,7 +17,7 @@ public class StorageController {
     /**
      * 获取所有库存信息
      */
-    @GetMapping(value = "/storage/getAllStoragesInfo")
+    @GetMapping(value = "/getAllStoragesInfo")
     public ResultModelGet<StorageVO> getAllStoragesInfo() {
         return storageService.getAllStoragesInfo();
     }
@@ -26,7 +27,7 @@ public class StorageController {
      * @param page 页数
      * @param size 每页大小
      */
-    @GetMapping(value = "/storage/getStoragesInfoByPage")
+    @GetMapping(value = "/getStoragesInfoByPage")
     public ResultModelGet<StorageVO> getStoragesInfoByPage(int page, @RequestParam(value = "size", defaultValue = "2") int size) {
         return storageService.getStoragesInfoByPage(page, size);
     }
@@ -35,8 +36,8 @@ public class StorageController {
      * 添加库存
      * @param storageVO 库存信息 可以不传入storageNum，storageNum为null是会自动赋值
      */
-    @PostMapping(value = "/storage/addStorage")
-    public ResultModel addStorage(StorageVO storageVO) {
+    @PostMapping(value = "/addStorage")
+    public ResultModel addStorage(@RequestBody StorageVO storageVO) {
         return storageService.addStorage(storageVO);
     }
 
@@ -44,7 +45,7 @@ public class StorageController {
      * 删除库存
      * @param storageNum 库存编号
      */
-    @PostMapping(value = "/storage/deleteStorageById/{storageNum}")
+    @DeleteMapping(value = "/deleteStorageById/{storageNum}")
     public ResultModel deleteStorageById(@PathVariable("storageNum") int storageNum) {
         return storageService.deleteStorageById(storageNum);
     }
@@ -53,8 +54,8 @@ public class StorageController {
      * 更新库存信息
      * @param storageVO 库存信息 必须传入storageNum
      */
-    @PutMapping(value = "/storage/updateStorage")
-    public ResultModel updateStorage(StorageVO storageVO) {
+    @PutMapping(value = "/updateStorage")
+    public ResultModel updateStorage(@RequestBody StorageVO storageVO) {
         return storageService.updateStorage(storageVO);
     }
 }

@@ -12,7 +12,7 @@
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="backend" target="1.8" />
-      <module name="JavaSummerTraining" target="1.5" />
+      <module name="JavaSummerTraining" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

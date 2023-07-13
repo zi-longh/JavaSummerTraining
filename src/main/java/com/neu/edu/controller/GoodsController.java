@@ -22,14 +22,15 @@ public class GoodsController {
         return goodsService.getGoodsById(id);
     }
 
-    // todo: 2021/7/27 该接口未实现！
-    @GetMapping(value = "/getGoodsSumById/{id}")
-    public ResultModelGetById<GoodsVO> getGoodsSumById(@PathVariable("id") int id) {
-        return goodsService.getGoodsSumById(id);
-    }
+    /**
+     * 展示商品信息以及相关库存信息
+     */
+    // todo
+    @GetMapping(value = "/getGoodsNum")
+
 
     @PostMapping(value = "/addGood")
-    public ResultModel addGood(@RequestBody GoodsVO goodsVO) {
+    public ResultModel addGood(GoodsVO goodsVO) {
         return goodsService.addGood(goodsVO);
     }
 
@@ -46,6 +47,14 @@ public class GoodsController {
     public ResultModel updateGoods(@RequestBody GoodsVO goodsVO) {
         return goodsService.updateGood(goodsVO);
     }
+
+    // todo: 2021/7/27 该接口未实现！
+    @GetMapping(value = "/getGoodsSumById/{id}")
+    public ResultModelGetById<GoodsVO> getGoodsSumById(@PathVariable("id") int id) {
+        return goodsService.getGoodsSumById(id);
+    }
+
+
 
 
 }

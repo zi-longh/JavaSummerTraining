@@ -4,6 +4,7 @@ import com.neu.edu.utils.ResultModel;
 import com.neu.edu.utils.ResultModelGet;
 import com.neu.edu.utils.ResultModelGetById;
 import com.neu.edu.vo.GoodsVO;
+import com.neu.edu.vo.VO1;
 
 public interface GoodsService {
     ResultModelGet<GoodsVO> getAllGoodsInfo();

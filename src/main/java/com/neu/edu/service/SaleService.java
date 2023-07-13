@@ -3,6 +3,7 @@ package com.neu.edu.service;
 import com.neu.edu.utils.ResultModel;
 import com.neu.edu.utils.ResultModelGet;
 import com.neu.edu.vo.SaleVO;
+import com.neu.edu.vo.VO1;
 
 public interface SaleService {
     ResultModelGet<SaleVO> getAllSalesInfo();
@@ -10,4 +11,5 @@ public interface SaleService {
     ResultModel addSale(SaleVO saleVO);
     ResultModel deleteSaleById(int saleNum);
     ResultModel updateSale(SaleVO saleVO);
+
 }

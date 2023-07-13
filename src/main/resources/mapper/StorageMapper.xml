@@ -11,6 +11,8 @@
     select * from storage where storageNum = #{storageNum}
 </select>
 
+
+
 <insert id="addStorage" parameterType="StorageVO">
     insert into storage(storageNum, storageName, storageAddress)
     values (#{storageNum}, #{storageName}, #{storageAddress})

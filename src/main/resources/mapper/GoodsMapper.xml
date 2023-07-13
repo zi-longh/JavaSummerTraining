@@ -16,6 +16,7 @@
     select * from goods where goodsName = #{goodsName}
 </select>
 
+
 <insert id="addGood" parameterType="GoodsVO">
     insert into goods (goodsName, goodsType, goodsPrice, goodsCost) values(#{goodsName}, #{goodsType}, #{goodsPrice}, #{goodsCost})
 </insert>

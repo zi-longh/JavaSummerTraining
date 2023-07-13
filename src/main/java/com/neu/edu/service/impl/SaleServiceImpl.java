@@ -27,6 +27,10 @@ public class SaleServiceImpl implements SaleService {
     }
 
     /**
+     * 获取
+     */
+
+    /**
      * 按页查询销售记录
      * @param page 页数
      * @param size 每页大小

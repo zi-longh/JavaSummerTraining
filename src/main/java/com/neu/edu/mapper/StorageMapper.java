@@ -1,6 +1,7 @@
 package com.neu.edu.mapper;
 
 import com.neu.edu.vo.StorageVO;
+import com.neu.edu.vo.VO2;
 
 import java.util.List;
 
@@ -19,6 +20,5 @@ public interface StorageMapper {
     int addStorageWithoutId(StorageVO storageVO);
     int deleteStorageById(Integer storageNum);
     int updateStorage(StorageVO storageVO);
-
 
 }

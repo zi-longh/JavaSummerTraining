@@ -19,6 +19,7 @@
         select * from sale where id = #{id}
     </select>
 
+
     <insert id="addSale" parameterType="SaleVO">
         insert into sale(id, emp_workerNum, goo_goodsNum, saleTime, saleNum)
         values (#{id}, #{emp_workerNum}, #{goo_goodsNum}, #{saleTime}, #{saleNum})

@@ -1,6 +1,7 @@
 package com.neu.edu.mapper;
 
 import com.neu.edu.vo.GoodsVO;
+import com.neu.edu.vo.VO1;
 
 import java.util.List;
 

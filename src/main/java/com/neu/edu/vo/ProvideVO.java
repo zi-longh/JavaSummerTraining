@@ -1,6 +1,6 @@
 package com.neu.edu.vo;
 
-public class Provide {
+public class ProvideVO {
     /*
     属性名           类型
     id              int auto_increment

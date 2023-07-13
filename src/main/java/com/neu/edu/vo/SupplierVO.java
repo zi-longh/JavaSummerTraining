@@ -1,6 +1,6 @@
 package com.neu.edu.vo;
 
-public class SuppliersVO {
+public class SupplierVO {
     /*
     属性名
     supplierNum          int ,
@@ -8,16 +8,16 @@ public class SuppliersVO {
     supplierAddress      varchar(100),
     supplierPhone        varchar(11),
     */
-    private String supplierNum;
+    private Integer supplierNum;
     private String supplierName;
     private String supplierAddress;
     private String supplierPhone;
 
-    public String getSupplierNum() {
+    public Integer getSupplierNum() {
         return supplierNum;
     }
 
-    public void setSupplierNum(String supplierNum) {
+    public void setSupplierNum(Integer supplierNum) {
         this.supplierNum = supplierNum;
     }
 

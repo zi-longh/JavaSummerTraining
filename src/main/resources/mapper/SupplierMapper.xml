@@ -16,7 +16,7 @@
         select * from suppliers
     </select>
 
-    <select id="getSupplierById" resultType="SupplierVO">
+    <select id="getSupplierInfoById" resultType="SupplierVO">
         select * from suppliers where supplierNum = #{supplierNum}
     </select>
 

@@ -20,14 +20,15 @@ public class GoodsController {
     public ResultModelGetById<GoodsVO> getGoodsById(@PathVariable("id") int id) {
         return goodsService.getGoodsById(id);
     }
+
+    // todo: 2021/7/27 该接口未实现！
     @GetMapping(value = "/goods/getGoodsSumById/{id}")
     public ResultModelGetById<GoodsVO> getGoodsSumById(@PathVariable("id") int id) {
         return goodsService.getGoodsSumById(id);
     }
 
     @PostMapping(value = "/goods/addGood")
-    public ResultModel addGood(GoodsVO goodsVO) {
-//        System.out.println(goodsVO.getGoodsName());
+    public ResultModel addGood(@RequestBody GoodsVO goodsVO) {
         return goodsService.addGood(goodsVO);
     }
 
@@ -36,12 +37,14 @@ public class GoodsController {
         return goodsService.deleteGoodById(id);
     }
 
+    /**
+     * 更新商品信息
+     * @param goodsVO 商品信息 必须传入id
+     */
     @PutMapping(value = "/goods/updateGood")
-    public ResultModel updateGoods(GoodsVO goodsVO) {
+    public ResultModel updateGoods(@RequestBody GoodsVO goodsVO) {
         return goodsService.updateGood(goodsVO);
     }
-
-
 
 
 }

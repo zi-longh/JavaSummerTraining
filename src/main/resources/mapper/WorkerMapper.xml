@@ -5,24 +5,33 @@
 <mapper namespace="com.neu.edu.mapper.WorkerMapper">
 
 <select id="getAllWorkersInfo" resultType="WorkerVO">
-    select * from worker
+    select * from employer
 </select>
 
 <select id="getWorkerInfoById" resultType="WorkerVO">
-    select * from worker where workerNum = #{workerNum}
+    select * from employer where workerNum = #{workerNum}
+</select>
+
+<select id="getWorkerInfoByName" resultType="WorkerVO">
+    select * from employer where name = #{name}
 </select>
 
 <insert id="addWorker" parameterType="WorkerVO">
-    insert into worker(workerNum, name, age, sex, phoneNum, workTime, office, salary)
+    insert into employer(workerNum, name, age, sex, phoneNum, workTime, office, salary)
     values (#{workerNum}, #{name}, #{age}, #{sex}, #{phoneNum}, #{workTime}, #{office}, #{salary})
 </insert>
 
+<insert id="addWorkerWithoutId" parameterType="WorkerVO">
+    insert into employer(name, age, sex, phoneNum, workTime, office, salary)
+    values (#{name}, #{age}, #{sex}, #{phoneNum}, #{workTime}, #{office}, #{salary})
+</insert>
+
 <delete id="deleteWorkerById" parameterType="int">
-    delete from worker where workerNum = #{workerNum}
+    delete from employer where workerNum = #{workerNum}
 </delete>
 
 <update id="updateWorker" parameterType="WorkerVO">
-    update worker set name = #{name}, age = #{age}, sex = #{sex}, phoneNum = #{phoneNum}, workTime = #{workTime}, office = #{office}, salary = #{salary}
+    update employer set name = #{name}, age = #{age}, sex = #{sex}, phoneNum = #{phoneNum}, workTime = #{workTime}, office = #{office}, salary = #{salary}
     where workerNum = #{workerNum}
 </update>
 

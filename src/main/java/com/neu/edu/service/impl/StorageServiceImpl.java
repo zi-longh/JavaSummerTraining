@@ -138,5 +138,19 @@ public class StorageServiceImpl implements StorageService {
         return resultModel;
     }
 
+    /**
+     * 获取库存StorageNum
+     */
+    @Override
+    public ResultModelGet<String> getStoragesNum() {
+        ResultModelGet<String> resultModelGet = new ResultModelGet<>();
+        List<String> storagesNum = storageMapper.getStoragesNum();
+        resultModelGet.setStatus(0);
+        resultModelGet.setMessage("查询库存编号成功!");
+        resultModelGet.setData(storagesNum);
+        resultModelGet.setDataTotal(storagesNum.size());
+        return resultModelGet;
+    }
+
 
 }

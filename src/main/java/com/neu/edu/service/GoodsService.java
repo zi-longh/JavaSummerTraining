@@ -14,4 +14,6 @@ public interface GoodsService {
     ResultModelGetById<GoodsVO> getGoodsById(int id);
     ResultModelGetById<GoodsVO> getGoodsSumById(int id);
 
+    ResultModelGet<String> getGoodsNum();
+
 }

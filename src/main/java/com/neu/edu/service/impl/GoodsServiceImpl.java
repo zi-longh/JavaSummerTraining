@@ -61,6 +61,19 @@ public class GoodsServiceImpl implements GoodsService {
     }
 
     /**
+     * 获取所有商品编号, 结果返回一个List<String>
+     */
+    @Override
+    public ResultModelGet<String> getGoodsNum() {
+        ResultModelGet<String> resultModelGet = new ResultModelGet<String>();
+        List<String> goodsNum = GoodsMapper.getGoodsNum();
+        resultModelGet.setStatus(0);
+        resultModelGet.setMessage("查询商品编号成功!");
+        resultModelGet.setData(goodsNum);
+        return resultModelGet;
+    }
+
+    /**
      * 添加商品
      */
     @Override

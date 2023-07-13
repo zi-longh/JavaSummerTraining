@@ -23,10 +23,12 @@ public class GoodsController {
     }
 
     /**
-     * 展示商品信息以及相关库存信息
+     * 获取商品编号goodsNum, 返回一个list
      */
-    // todo
     @GetMapping(value = "/getGoodsNum")
+    public ResultModelGet<String> getGoodsNum() {
+        return goodsService.getGoodsNum();
+    }
 
 
     @PostMapping(value = "/addGood")

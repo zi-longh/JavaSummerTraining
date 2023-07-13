@@ -12,5 +12,5 @@ public interface StorageService {
     ResultModel deleteStorageById(int storageNum);
     ResultModel updateStorage(StorageVO storageVO);
 
-
+    ResultModelGet<String> getStoragesNum();
 }

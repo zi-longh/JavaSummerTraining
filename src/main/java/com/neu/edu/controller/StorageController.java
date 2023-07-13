@@ -23,6 +23,14 @@ public class StorageController {
     }
 
     /**
+     * 获取库存编号storageNum, 返回一个list
+     */
+    @GetMapping(value = "/getStoragesNum")
+    public ResultModelGet<String> getStoragesNum() {
+        return storageService.getStoragesNum();
+    }
+
+    /**
      * 按页获取库存信息
      * @param page 页数
      * @param size 每页大小

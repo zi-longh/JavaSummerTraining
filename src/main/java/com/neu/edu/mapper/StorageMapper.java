@@ -20,5 +20,5 @@ public interface StorageMapper {
     int addStorageWithoutId(StorageVO storageVO);
     int deleteStorageById(Integer storageNum);
     int updateStorage(StorageVO storageVO);
-
+    List<String> getStoragesNum();
 }

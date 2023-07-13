@@ -11,7 +11,9 @@
     select * from storage where storageNum = #{storageNum}
 </select>
 
-
+<select id="getStoragesNum" resultType="String">
+    select storageNum from storage
+</select>
 
 <insert id="addStorage" parameterType="StorageVO">
     insert into storage(storageNum, storageName, storageAddress)

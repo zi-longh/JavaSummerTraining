@@ -11,15 +11,15 @@
     office         int
     */
 -->
-    <select id="login" resultType="User">
+    <select id="login" resultType="UserVO">
         select * from user where username=#{username}
     </select>
 
-    <select id="getUserInfoById" resultType="User">
+    <select id="getUserInfoById" resultType="UserVO">
         select * from user where username=#{username}
     </select>
 
-    <insert id="register" parameterType="User">
+    <insert id="register" parameterType="UserVO">
         insert into user values(#{username},#{password},#{office})
     </insert>
 
@@ -27,7 +27,7 @@
         delete from user where username=#{username}
     </delete>
 
-    <update id="updateUser" parameterType="User">
+    <update id="updateUser" parameterType="UserVO">
         update user set password=#{password},office=#{office} where username=#{username}
     </update>
 

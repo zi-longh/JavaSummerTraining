@@ -21,7 +21,8 @@
 </select>
 
 <insert id="addGood" parameterType="GoodsVO">
-    insert into goods (goodsName, goodsType, goodsPrice, goodsCost) values(#{goodsName}, #{goodsType}, #{goodsPrice}, #{goodsCost})
+    insert into goods (goodsName, goodsType, goodsPrice, goodsCost, goodsPictureUrl)
+    values(#{goodsName}, #{goodsType}, #{goodsPrice}, #{goodsCost}, #{goodsPictureUrl} )
 </insert>
 
 <delete id="deleteGoodById" parameterType="int">
@@ -29,7 +30,7 @@
 </delete>
 
 <update id="updateGood" parameterType="GoodsVO">
-    update goods set goodsName = #{goodsName}, goodsType = #{goodsType}, goodsPrice = #{goodsPrice}, goodsCost = #{goodsCost}
+    update goods set goodsName = #{goodsName}, goodsType = #{goodsType}, goodsPrice = #{goodsPrice}, goodsCost = #{goodsCost}, goodsPictureUrl = #{goodsPictureUrl}
     where goodsNum = #{goodsNum}
 </update>
 

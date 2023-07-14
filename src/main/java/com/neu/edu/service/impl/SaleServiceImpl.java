@@ -71,35 +71,18 @@ public class SaleServiceImpl implements SaleService {
     @Override
     public ResultModel addSale(SaleVO saleVO){
         ResultModel resultModel = new ResultModel();
-        // 判断是否缺乏必要参数
-        if(saleVO == null || saleVO.getSaleNum()==null || saleVO.getEmp_workerNum()==null || saleVO.getSaleTime()==null || saleVO.getGoo_goodsNum() == null ){
+
+        // 判断是否缺乏必要参数，必须传入goo_goodsNum, saleTime, saleNum.
+        if(saleVO == null || saleVO.getSaleNum()==null || saleVO.getSaleTime()==null || saleVO.getGoo_goodsNum() == null ){
             resultModel.setStatus(1);
             resultModel.setMessage("缺乏必要参数, 添加销售记录失败!");
             return resultModel;
         }
-        // 判断是否传入了id
-        if(saleVO.getId() != null){
-            // 传入了id, 判断id是否存在
-            if(saleMapper.getSaleInfoById(saleVO.getId()) != null){
-                // id存在, 添加失败
-                resultModel.setStatus(1);
-                resultModel.setMessage("id: " + saleVO.getId() + " 已存在, 添加销售记录失败!");
-            }else{
-                // id不存在, 添加销售记录
 
-                System.out.println(saleVO.toString());
-                System.out.println(saleMapper.addSale(saleVO));
-                resultModel.setStatus(0);
-                resultModel.setMessage("添加销售记录成功!");
-            }
-        }else{
-
-            // 未传入id, 添加销售记录
-            System.out.println(""+saleVO.toString());
-            System.out.println(saleMapper.addSaleWithoutId(saleVO));
-            resultModel.setStatus(0);
-            resultModel.setMessage("添加销售记录成功!");
-        }
+        // 添加销售记录
+        saleMapper.addSale(saleVO);
+        resultModel.setStatus(0);
+        resultModel.setMessage("添加销售记录成功!");
         return resultModel;
     }
 

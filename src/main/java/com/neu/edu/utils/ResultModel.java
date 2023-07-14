@@ -20,5 +20,11 @@ public class ResultModel {
         this.message = message;
     }
 
+    public ResultModel() {
+    }
 
+    public ResultModel(int status, String message) {
+        this.status = status;
+        this.message = message;
+    }
 }

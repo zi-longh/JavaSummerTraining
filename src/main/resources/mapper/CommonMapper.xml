@@ -73,7 +73,6 @@
                 store
             WHERE
                 goo_goodsNum = #{goo_goodsNum}
-              AND sto_storageNum = #{sto_storageNum}
         ) AS storageSum,
         (
             SELECT
@@ -89,7 +88,6 @@
                 store
             WHERE
                 goo_goodsNum = #{goo_goodsNum}
-              AND sto_storageNum = #{sto_storageNum}
         ) AS availableNum
 </select>
 

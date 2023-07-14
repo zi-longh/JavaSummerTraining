@@ -52,10 +52,10 @@ public class CommonServiceImpl implements CommonService {
     @Override
     public ResultModelGetById<StoreInfoVO> getAvailableNum(StoreVO storeVO) {
         ResultModelGetById<StoreInfoVO> resultModelGetById = new ResultModelGetById<StoreInfoVO>();
-        // 判断是否缺乏必要参数goo_goodsNum和sto_storageNum
-        if(storeVO.getGoo_goodsNum() == null || storeVO.getSto_storageNum() == null){
+        // 判断是否缺乏必要参数goo_goodsNum
+        if(storeVO.getGoo_goodsNum() == null ){
             resultModelGetById.setStatus(1);
-            resultModelGetById.setMessage("缺乏必要参数goo_goodsNum和sto_storageNum, 查询失败!");
+            resultModelGetById.setMessage("缺乏必要参数goo_goodsNum 查询失败!");
             resultModelGetById.setData(null);
             return resultModelGetById;
         }

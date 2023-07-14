@@ -126,6 +126,18 @@ public class GoodsServiceImpl implements GoodsService {
     @Override
     public ResultModel updateGood(GoodsVO goodsVO){
         ResultModel resultModel = new ResultModel();
+        // 判断是否传入了id
+        if(goodsVO == null || goodsVO.getGoodsNum() == null){
+            resultModel.setStatus(1);
+            resultModel.setMessage("参数错误, 未传入id!");
+            return resultModel;
+        }
+
+        // 判断是否传入了goodsPictureUrl
+        if(goodsVO.getGoodsPictureUrl() == null){
+            goodsVO.setGoodsPictureUrl("");
+        }
+
         GoodsVO goods = GoodsMapper.getGoodsById(goodsVO.getGoodsNum()); // 通过id查询商品, 判断商品是否存在
         if (goods == null) {
             resultModel.setStatus(1);

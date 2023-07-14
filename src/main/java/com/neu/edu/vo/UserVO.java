@@ -4,6 +4,15 @@ public class UserVO {
     private String userName;
     private String password;
     private Integer office;
+    private Integer workerNum;
+
+    public Integer getWorkerNum() {
+        return workerNum;
+    }
+
+    public void setWorkerNum(Integer workerNum) {
+        this.workerNum = workerNum;
+    }
 
     public String getUserName() {
         return userName;

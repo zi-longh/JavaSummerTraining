@@ -33,10 +33,16 @@ public class SaleController {
 
     /**
      * 添加销售
-     * @param saleVO 销售信息 可以不传入saleNum，saleNum为null会自动赋值
+     * @param saleVO 销售信息 可以不传入id，id为null会自动赋值
+     *        必须传入goo_goodsNum,saleTime,saleNum
+     *        会自动获取emp_workNum
      */
     @PostMapping(value = "/addSale")
     public ResultModel addSale(@RequestBody SaleVO saleVO) {
+        Integer workNum = getWorkerNumByToken();
+        if (workNum == null) {
+            return new ResultModel(1, "请先登录!");
+        }
         return saleService.addSale(saleVO);
     }
 

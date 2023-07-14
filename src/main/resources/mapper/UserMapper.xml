@@ -9,6 +9,7 @@
     username       varchar(20) not null,
     password       varchar(20) not null,
     office         int
+    workerNum      int
     */
 -->
     <select id="login" resultType="UserVO">
@@ -20,7 +21,7 @@
     </select>
 
     <insert id="register" parameterType="UserVO">
-        insert into user values(#{userName},#{password},#{office})
+        insert into user values(#{userName},#{password},#{office},#{workerNum})
     </insert>
 
     <delete id="deleteUserById" parameterType="String">
@@ -28,7 +29,7 @@
     </delete>
 
     <update id="updateUser" parameterType="UserVO">
-        update user set password=#{password},office=#{office} where username=#{userName}
+        update user set password=#{password},office=#{office},workerNum=#{workerNum} where username=#{userName}
     </update>
 
 </mapper>

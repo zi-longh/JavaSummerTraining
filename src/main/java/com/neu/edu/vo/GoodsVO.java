@@ -6,6 +6,15 @@ public class GoodsVO {
     private String goodsType;
     private Double goodsPrice;
     private Double goodsCost;
+    private String goodsPictureUrl;
+
+    public String getGoodsPictureUrl() {
+        return goodsPictureUrl;
+    }
+
+    public void setGoodsPictureUrl(String goodsPictureUrl) {
+        this.goodsPictureUrl = goodsPictureUrl;
+    }
 
     public Integer getGoodsNum() {
         return goodsNum;

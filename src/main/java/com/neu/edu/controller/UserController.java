@@ -24,7 +24,7 @@ public class UserController {
      */
     @PostMapping(value = "/login")
     public ResultModelGetById<String> login(UserVO userVO) {
-        return userService.login(userVO.getUserName(), userVO.getPassword());
+        return userService.login(userVO.getUserName(), userVO.getPassword(), userVO.getOffice());
     }
 
     /**

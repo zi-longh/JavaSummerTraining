@@ -43,8 +43,8 @@ public class SaleController {
     @PostMapping(value = "/addSale")
     public ResultModel addSale(HttpServletRequest request, SaleVO saleVO) {
         String token = request.getHeader("token");
-        System.out.println(JWTUtil.getUserInfoFromToken(token));
-        System.out.println(token);
+//        System.out.println(JWTUtil.getUserInfoFromToken(token));
+//        System.out.println(token);
         saleVO.setEmp_workerNum(JWTUtil.getUserInfoFromToken(token).getWorkerNum());
         return saleService.addSale(saleVO);
     }

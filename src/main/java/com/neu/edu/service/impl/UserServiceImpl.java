@@ -22,6 +22,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 @Service
 public class UserServiceImpl implements UserService {
@@ -35,9 +36,9 @@ public class UserServiceImpl implements UserService {
      * @param password 密码
      */
     @Override
-    public ResultModelGetById<String> login(String userName, String password) {
+    public ResultModelGetById<String> login(String userName, String password, Integer office) {
         ResultModelGetById<String> resultModelGetById = new ResultModelGetById<>();
-        if (userName == null || password == null) {
+        if (userName == null || password == null || office == null){
             resultModelGetById.setStatus(1);
             resultModelGetById.setMessage("用户名或密码为空!");
             resultModelGetById.setData(null);
@@ -50,6 +51,10 @@ public class UserServiceImpl implements UserService {
             } else if (!userVO.getPassword().equals(password)) {
                 resultModelGetById.setStatus(1);
                 resultModelGetById.setMessage("密码错误!");
+                resultModelGetById.setData(null);
+            }else if(!Objects.equals(userVO.getOffice(), office)){
+                resultModelGetById.setStatus(1);
+                resultModelGetById.setMessage("职位错误!");
                 resultModelGetById.setData(null);
             } else {
                 resultModelGetById.setStatus(0);

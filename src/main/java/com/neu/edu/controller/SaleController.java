@@ -1,11 +1,14 @@
 package com.neu.edu.controller;
 
 import com.neu.edu.service.SaleService;
+import com.neu.edu.utils.JWTUtil;
 import com.neu.edu.utils.ResultModel;
 import com.neu.edu.utils.ResultModelGet;
 import com.neu.edu.vo.SaleVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
+import javax.servlet.http.HttpServletRequest;
 
 @RestController
 @RequestMapping(value = "/sale")
@@ -38,11 +41,11 @@ public class SaleController {
      *        会自动获取emp_workNum
      */
     @PostMapping(value = "/addSale")
-    public ResultModel addSale(@RequestBody SaleVO saleVO) {
-        Integer workNum = getWorkerNumByToken();
-        if (workNum == null) {
-            return new ResultModel(1, "请先登录!");
-        }
+    public ResultModel addSale(HttpServletRequest request, SaleVO saleVO) {
+        String token = request.getHeader("token");
+        System.out.println(JWTUtil.getUserInfoFromToken(token));
+        System.out.println(token);
+        saleVO.setEmp_workerNum(JWTUtil.getUserInfoFromToken(token).getWorkerNum());
         return saleService.addSale(saleVO);
     }
 

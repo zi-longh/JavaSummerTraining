@@ -37,4 +37,14 @@ public class UserVO {
     public void setOffice(Integer office) {
         this.office = office;
     }
+
+    @Override
+    public String toString() {
+        return "UserVO{" +
+                "userName='" + userName + '\'' +
+                ", password='" + password + '\'' +
+                ", office=" + office +
+                ", workerNum=" + workerNum +
+                '}';
+    }
 }

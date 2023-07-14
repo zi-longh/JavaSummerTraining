@@ -1,11 +1,14 @@
 package com.neu.edu.controller;
 
 import com.neu.edu.service.SaleService;
+import com.neu.edu.utils.JWTUtil;
 import com.neu.edu.utils.ResultModel;
 import com.neu.edu.utils.ResultModelGet;
 import com.neu.edu.vo.SaleVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
+import javax.servlet.http.HttpServletRequest;
 
 @RestController
 @RequestMapping(value = "/sale")
@@ -36,7 +39,11 @@ public class SaleController {
      * @param saleVO 销售信息 可以不传入saleNum，saleNum为null会自动赋值
      */
     @PostMapping(value = "/addSale")
-    public ResultModel addSale(@RequestBody SaleVO saleVO) {
+    public ResultModel addSale(HttpServletRequest request, SaleVO saleVO) {
+        String token = request.getHeader("token");
+        System.out.println(JWTUtil.getUserInfoFromToken(token));
+        System.out.println(token);
+        saleVO.setEmp_workerNum(JWTUtil.getUserInfoFromToken(token).getWorkerNum());
         return saleService.addSale(saleVO);
     }
 

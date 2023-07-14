@@ -4,6 +4,7 @@ public class UserVO {
     private String userName;
     private String password;
     private Integer office;
+    private Integer workerNum;
 
     public String getUserName() {
         return userName;
@@ -27,5 +28,23 @@ public class UserVO {
 
     public void setOffice(Integer office) {
         this.office = office;
+    }
+
+    public Integer getWorkerNum() {
+        return workerNum;
+    }
+
+    public void setWorkerNum(Integer workerNum) {
+        this.workerNum = workerNum;
+    }
+
+    @Override
+    public String toString() {
+        return "UserVO{" +
+                "userName='" + userName + '\'' +
+                ", password='" + password + '\'' +
+                ", office=" + office +
+                ", workerNum=" + workerNum +
+                '}';
     }
 }

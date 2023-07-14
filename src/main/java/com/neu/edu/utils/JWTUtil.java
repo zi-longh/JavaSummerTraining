@@ -15,9 +15,11 @@ public class JWTUtil {
     private static final String priKeyPath = "src/main/resources/rsa/rsa.pri";
 
     public static String getToken(UserVO userVO){
+
         try {
-            return generateToken(userVO.getUserName(), RSAUtil.getPrivateKey(RSAUtil.getPrivateKey(priKeyPath).getEncoded()), 1800);
+            return generateToken(userVO, RSAUtil.getPrivateKey(RSAUtil.getPrivateKey(priKeyPath).getEncoded()), 1800);
         }catch(Exception e){
+            e.printStackTrace();
             return null;
         }
     }
@@ -33,19 +35,30 @@ public class JWTUtil {
     }
 
     /**
-     * 私钥生成Token
-     * @param oriInfo
+     * 生成密钥
+     * @param userVO
      * @param privateKey
-     * @param expire      过期时间,单位秒
+     * @param expire
      * @return
-     * @throws Exception
      */
-    public static String generateToken(String oriInfo, PrivateKey privateKey, int expire) {
+    public static String generateToken(UserVO userVO, PrivateKey privateKey, int expire) {
         return Jwts.builder()
-                .claim("info", oriInfo)
+                .claim("userName", userVO.getUserName())
+                .claim("workerNum", userVO.getWorkerNum())
                 .setExpiration(DateTime.now().plusSeconds(expire).toDate())
                 .signWith(SignatureAlgorithm.RS256 ,privateKey)
                 .compact();
+    }
+
+    public static UserVO getUserInfoFromToken(String token){
+        UserVO result = new UserVO();
+        try {
+            PublicKey publicKey = RSAUtil.getPublicKey(RSAUtil.getPublicKey(pubKeyPath).getEncoded());
+            result = getInfoFromToken(token, publicKey);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return result;
     }
 
     /**
@@ -55,9 +68,12 @@ public class JWTUtil {
      * @return
      * @throws Exception
      */
-    public static String getInfoFromToken(String token, PublicKey publicKey) {
+    public static UserVO getInfoFromToken(String token, PublicKey publicKey) {
         Jws<Claims> claimsJws = Jwts.parser().setSigningKey(publicKey).parseClaimsJws(token);
         Claims body = claimsJws.getBody();
-        return body.get("info")+"";
+        UserVO userVO = new UserVO();
+        userVO.setWorkerNum((Integer) body.get("workerNum"));
+        userVO.setUserName(body.get("userName")+"");
+        return userVO;
     }
 }

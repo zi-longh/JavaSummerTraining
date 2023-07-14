@@ -1,11 +1,14 @@
 package com.neu.edu.controller;
 import com.neu.edu.service.GoodsService;
+import com.neu.edu.utils.JWTUtil;
 import com.neu.edu.utils.ResultModel;
 import com.neu.edu.utils.ResultModelGet;
 import com.neu.edu.utils.ResultModelGetById;
 import com.neu.edu.vo.GoodsVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
+import javax.servlet.http.HttpServletRequest;
 
 @RestController
 @RequestMapping(value = "/goods")

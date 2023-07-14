@@ -37,7 +37,7 @@ public class SupplierController {
     /**
      * 获取供应商编号，返回list<String>
      */
-    @GetMapping(value = "/getSupplierNum")
+    @GetMapping(value = "/getSuppliersNum")
     public ResultModelGet<String> getSupplierNum() {
         return suppliersService.getSupplierNum();
     }

@@ -55,10 +55,6 @@ public class GoodsController {
     public ResultModelGetById<GoodsVO> getGoodsSumById(@PathVariable("id") int id) {
         return goodsService.getGoodsSumById(id);
     }
-
-
-
-
 }
 
 

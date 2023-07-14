@@ -2,6 +2,7 @@ package com.neu.edu.service.impl;
 
 import com.neu.edu.mapper.UserMapper;
 import com.neu.edu.service.UserService;
+import com.neu.edu.utils.JWTUtil;
 import com.neu.edu.utils.ResultModelGetById;
 import com.neu.edu.vo.UserVO;
 import org.springframework.stereotype.Service;
@@ -34,8 +35,8 @@ public class UserServiceImpl implements UserService {
      * @param password 密码
      */
     @Override
-    public ResultModelGetById<UserVO> login(String userName, String password) {
-        ResultModelGetById<UserVO> resultModelGetById = new ResultModelGetById<>();
+    public ResultModelGetById<String> login(String userName, String password) {
+        ResultModelGetById<String> resultModelGetById = new ResultModelGetById<>();
         if (userName == null || password == null) {
             resultModelGetById.setStatus(1);
             resultModelGetById.setMessage("用户名或密码为空!");
@@ -53,7 +54,7 @@ public class UserServiceImpl implements UserService {
             } else {
                 resultModelGetById.setStatus(0);
                 resultModelGetById.setMessage("登录成功!");
-                resultModelGetById.setData(userVO);
+                resultModelGetById.setData(JWTUtil.getToken(userVO));
             }
         }
         return resultModelGetById;

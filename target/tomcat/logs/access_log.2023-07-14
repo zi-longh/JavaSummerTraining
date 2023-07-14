@@ -1,0 +1,6 @@
+0:0:0:0:0:0:0:1 - - [14/Jul/2023:09:41:12 +0800] "GET /worker/getWorkersNum HTTP/1.1" 200 374 http-bio-80-exec-2 938
+0:0:0:0:0:0:0:1 - - [14/Jul/2023:10:59:03 +0800] "GET /data/getAvailableNum?goo_goodsNum=2022049&sto_storageNum=202212 HTTP/1.1" 200 74 http-bio-80-exec-2 1148
+0:0:0:0:0:0:0:1 - - [14/Jul/2023:11:03:11 +0800] "POST /data/getAvailableNum HTTP/1.1" 200 74 http-bio-80-exec-2 1118
+0:0:0:0:0:0:0:1 - - [14/Jul/2023:11:03:14 +0800] "POST /data/getAvailableNum HTTP/1.1" 200 74 http-bio-80-exec-3 6
+0:0:0:0:0:0:0:1 - - [14/Jul/2023:11:13:03 +0800] "POST /data/getAvailableNum HTTP/1.1" 200 109 http-bio-80-exec-2 1134
+0:0:0:0:0:0:0:1 - - [14/Jul/2023:11:16:33 +0800] "POST /user/login HTTP/1.1" 415 1048 http-bio-80-exec-5 7

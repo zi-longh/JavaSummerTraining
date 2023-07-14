@@ -2,6 +2,8 @@ package com.neu.edu.mapper;
 
 import com.neu.edu.vo.UserVO;
 
+import java.util.List;
+
 public interface UserMapper {
     /*
         login

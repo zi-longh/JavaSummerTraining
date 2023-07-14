@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.neu.edu.mapper.StoreMapper">
+<!--
+    表名：store
+    属性名         类型
+    id             int auto_increment
+    sto_storageNum int    not null,
+    goo_goodsNum   int    not null,
+    storageSum     bigint not null,
+    */
+-->
+    <select id="getAllStoresInfo" resultType="StoreVO">
+        select * from store
+    </select>
+
+    <select id="getStoreInfoById" resultType="StoreVO">
+        select * from store where id = #{id}
+    </select>
+
+    <insert id="addStore" parameterType="StoreVO">
+        insert into store (sto_storageNum, goo_goodsNum, storageSum) values(#{sto_storageNum}, #{goo_goodsNum}, #{storageSum})
+    </insert>
+
+    <delete id="deleteStoreById" parameterType="int">
+        delete from store where id = #{id}
+    </delete>
+
+    <update id="updateStore" parameterType="StoreVO">
+        update store set sto_storageNum = #{sto_storageNum}, goo_goodsNum = #{goo_goodsNum}, storageSum = #{storageSum}
+        where id = #{id}
+    </update>
+</mapper>

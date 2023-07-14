@@ -2,11 +2,11 @@ package com.neu.edu.controller;
 
 import com.neu.edu.service.CommonService;
 import com.neu.edu.utils.ResultModelGet;
-import com.neu.edu.vo.VO1;
-import com.neu.edu.vo.VO2;
-import com.neu.edu.vo.VO3;
+import com.neu.edu.utils.ResultModelGetById;
+import com.neu.edu.vo.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -31,4 +31,11 @@ public class CommonController {
         return commonService.getInfo3();
     }
 
+    /**
+     * 需要提供参数goo_goodsNum和sto_storageNum
+     */
+    @PostMapping(value = "/getAvailableNum")
+    public ResultModelGetById<StoreInfoVO> getAvailableNum(StoreVO storeVO) {
+        return commonService.getAvailableNum(storeVO);
+    }
 }

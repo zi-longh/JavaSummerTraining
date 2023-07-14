@@ -16,6 +16,10 @@
     select * from employer where name = #{name}
 </select>
 
+<select id="getWorkerNum" resultType="String">
+    select workerNum from employer
+</select>
+
 <insert id="addWorker" parameterType="WorkerVO">
     insert into employer(workerNum, name, age, sex, phoneNum, workTime, office, salary)
     values (#{workerNum}, #{name}, #{age}, #{sex}, #{phoneNum}, #{workTime}, #{office}, #{salary})

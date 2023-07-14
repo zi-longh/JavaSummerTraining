@@ -6,13 +6,8 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="JavaSummerTraining" />
         <module name="Myday06Integration" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="backend" target="1.8" />
-      <module name="JavaSummerTraining" target="1.8" />
-    </bytecodeTargetLevel>
   </component>
 </project>

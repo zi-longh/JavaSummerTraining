@@ -3,9 +3,8 @@ package com.neu.edu.service.impl;
 import com.neu.edu.mapper.CommonMapper;
 import com.neu.edu.service.CommonService;
 import com.neu.edu.utils.ResultModelGet;
-import com.neu.edu.vo.VO1;
-import com.neu.edu.vo.VO2;
-import com.neu.edu.vo.VO3;
+import com.neu.edu.utils.ResultModelGetById;
+import com.neu.edu.vo.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -47,5 +46,30 @@ public class CommonServiceImpl implements CommonService {
         return resultModelGet;
     }
 
+    /**
+     * 获取可入库数量
+     */
+    @Override
+    public ResultModelGetById<StoreInfoVO> getAvailableNum(StoreVO storeVO) {
+        ResultModelGetById<StoreInfoVO> resultModelGetById = new ResultModelGetById<StoreInfoVO>();
+        // 判断是否缺乏必要参数goo_goodsNum和sto_storageNum
+        if(storeVO.getGoo_goodsNum() == null || storeVO.getSto_storageNum() == null){
+            resultModelGetById.setStatus(1);
+            resultModelGetById.setMessage("缺乏必要参数goo_goodsNum和sto_storageNum, 查询失败!");
+            resultModelGetById.setData(null);
+            return resultModelGetById;
+        }
 
+        StoreInfoVO storeInfoVO = commonMapper.getAvailableNum(storeVO);
+        if (storeInfoVO == null) {
+            resultModelGetById.setStatus(1);
+            resultModelGetById.setMessage("查询失败!没有数据!");
+            resultModelGetById.setData(null);
+        } else {
+            resultModelGetById.setStatus(0);
+            resultModelGetById.setMessage("查询成功!");
+            resultModelGetById.setData(storeInfoVO);
+        }
+        return resultModelGetById;
+    }
 }

@@ -55,5 +55,42 @@
         sale.emp_workerNum = employer.workerNum
       and sale.goo_goodsNum = goods.goodsNum
 </select>
+    
+<select id="getAvailableNum" resultType="StoreInfoVO" parameterType="StoreVO">
+    SELECT
+        (
+            SELECT
+                SUM(supplierSum)
+            FROM
+                provide
+            WHERE
+                goo_goodsNum = #{goo_goodsNum}
+        ) AS supplySum,
+        (
+            SELECT
+                SUM(storageSum)
+            FROM
+                store
+            WHERE
+                goo_goodsNum = #{goo_goodsNum}
+              AND sto_storageNum = #{sto_storageNum}
+        ) AS storageSum,
+        (
+            SELECT
+                SUM(supplierSum)
+            FROM
+                provide
+            WHERE
+                goo_goodsNum = #{goo_goodsNum}
+        ) - (
+            SELECT
+                SUM(storageSum)
+            FROM
+                store
+            WHERE
+                goo_goodsNum = #{goo_goodsNum}
+              AND sto_storageNum = #{sto_storageNum}
+        ) AS availableNum
+</select>
 
 </mapper>

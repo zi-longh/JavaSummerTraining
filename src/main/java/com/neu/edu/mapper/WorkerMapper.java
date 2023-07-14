@@ -15,6 +15,7 @@ public interface WorkerMapper {
     List<WorkerVO> getAllWorkersInfo();
     WorkerVO getWorkerInfoById(Integer workerNum);
     WorkerVO getWorkerInfoByName(String name);
+    List<String> getWorkerNum();
     int addWorker(WorkerVO workerVO);
     int addWorkerWithoutId(WorkerVO workerVO);
     int deleteWorkerById(Integer workerNum);

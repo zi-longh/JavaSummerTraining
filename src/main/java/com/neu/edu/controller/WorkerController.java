@@ -32,6 +32,14 @@ public class WorkerController {
     }
 
     /**
+     * 获取员工编号
+     */
+    @GetMapping(value = "/getWorkersNum")
+    public ResultModelGet<String> getWorkerNum() {
+        return workerService.getWorkerNum();
+    }
+
+    /**
      * 添加员工
      * @param workerVO 员工信息 可以不传入workerNum
      */

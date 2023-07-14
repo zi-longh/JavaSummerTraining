@@ -10,4 +10,6 @@ public interface WorkerService {
     ResultModel addWorker(WorkerVO workerVO);
     ResultModel deleteWorkerById(int id);
     ResultModel updateWorker(WorkerVO workerVO);
+
+    ResultModelGet<String> getWorkerNum();
 }

@@ -65,6 +65,20 @@ public class WorkerServiceImpl implements WorkerService {
     }
 
     /**
+     * 获取员工编号，返回员工编号列表
+     */
+     @Override
+     public ResultModelGet<String> getWorkerNum(){
+            ResultModelGet<String> resultModelGet = new ResultModelGet<String>();
+            List<String> workerNum = workerMapper.getWorkerNum();
+            resultModelGet.setStatus(0);
+            resultModelGet.setMessage("查询员工编号成功!");
+            resultModelGet.setData(workerNum);
+            resultModelGet.setDataTotal(workerNum.size());
+            return resultModelGet;
+     }
+
+    /**
      * addWorker
      * 添加员工
      * @param workerVO 员工信息

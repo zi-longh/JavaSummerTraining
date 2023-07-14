@@ -15,6 +15,7 @@ public class HeaderTokenInterceptor implements HandlerInterceptor {
         System.out.println(token);
         // 验证token
         return JWTUtil.verifyToken(token);
+        
 //        return true;
     }
 }

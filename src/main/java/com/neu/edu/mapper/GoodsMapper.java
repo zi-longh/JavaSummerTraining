@@ -13,8 +13,8 @@ public interface GoodsMapper {
     int addGood(GoodsVO goodsVO);
     int deleteGoodById(Integer goodsNum);
     int updateGood(GoodsVO goodsVO);
-
     List<String> getGoodsNum();
+    int updateGoodsUrl(GoodsVO goodsVO);
     /*
     ResultModelGet<GoodsVO> getAllGoodsInfo();
     ResultModel addGood(GoodsVO goodsVO);

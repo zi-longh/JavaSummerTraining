@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 
 @Service
@@ -23,8 +24,27 @@ public class GoodsServiceImpl implements GoodsService {
      * 获取所有商品信息
      */
     @Override
-    public ResultModelGet<GoodsVO> getAllGoodsInfo(){
+    public ResultModelGet<GoodsVO> getAllGoodsInfo(Map<String, String> map){
         ResultModelGet<GoodsVO> resultModelGet = new ResultModelGet<GoodsVO>();
+
+        // 根据更新GoodsUrl
+        GoodsVO goodsVO = new GoodsVO();
+        for (Map.Entry<String, String> entry : map.entrySet()) {
+            String key = entry.getKey();
+            // 剔除key的5位前缀goods/，剔除key的4位后缀.jpg
+            if (key.length() < 10) {
+                continue;
+            }
+            key = key.substring(6, key.length() - 4);
+            // 剔除key两侧的空格
+            key = key.trim();
+//            System.out.println(key);
+            String value = entry.getValue();
+            goodsVO.setGoodsNum(Integer.parseInt(key));
+            goodsVO.setGoodsPictureUrl(value);
+            GoodsMapper.updateGoodsUrl(goodsVO);
+        }
+
         List<GoodsVO> goods = GoodsMapper.getAllGoodsInfo();
         resultModelGet.setStatus(0);
         resultModelGet.setMessage("查询商品成功!");

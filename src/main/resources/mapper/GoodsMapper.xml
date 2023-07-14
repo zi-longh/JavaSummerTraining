@@ -34,6 +34,11 @@
     where goodsNum = #{goodsNum}
 </update>
 
+<update id="updateGoodsUrl" parameterType="UserVO">
+    update goods set goodsPictureUrl = #{goodsPictureUrl}
+    where goodsNum = #{goodsNum}
+</update>
+
 </mapper>
 
 

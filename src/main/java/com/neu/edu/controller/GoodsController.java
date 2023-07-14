@@ -1,5 +1,6 @@
 package com.neu.edu.controller;
 import com.neu.edu.service.GoodsService;
+import com.neu.edu.service.impl.QiniuService;
 import com.neu.edu.utils.JWTUtil;
 import com.neu.edu.utils.ResultModel;
 import com.neu.edu.utils.ResultModelGet;
@@ -9,6 +10,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
+import java.io.UnsupportedEncodingException;
+import java.util.Map;
 
 @RestController
 @RequestMapping(value = "/goods")
@@ -17,8 +20,9 @@ public class GoodsController {
     GoodsService goodsService;
 
     @GetMapping(value = "/getAllGoodsInfo")
-    public ResultModelGet<GoodsVO> getGoods() {
-        return goodsService.getAllGoodsInfo();
+    public ResultModelGet<GoodsVO> getGoods() throws UnsupportedEncodingException {
+        Map<String, String> map = new QiniuService().getUrls();
+        return goodsService.getAllGoodsInfo(map);
     }
     @GetMapping(value = "/getGoodsById/{id}")
     public ResultModelGetById<GoodsVO> getGoodsById(@PathVariable("id") int id) {

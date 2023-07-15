@@ -5,7 +5,16 @@ package com.neu.edu.vo;
 public class StoreInfoVO {
     private Integer supplySum;
     private Integer storageSum;
+    private Integer saleSum;
     private Integer availableNum;
+
+    public Integer getSaleSum() {
+        return saleSum;
+    }
+
+    public void setSaleSum(Integer saleSum) {
+        this.saleSum = saleSum;
+    }
 
     public Integer getSupplySum() {
         return supplySum;

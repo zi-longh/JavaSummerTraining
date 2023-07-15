@@ -132,5 +132,25 @@ public class StoreMapperImpl implements StoreService {
         return resultModel;
     }
 
+    /**
+    * 更新存储信息，减少storageSum, 需要提供goo_goodsNum(商品编号), saleNum(销售数量)
+    * @param saleVO 存储减少信息
+    */
+    @Override
+    public ResultModel updateStoreBySale(SaleVO saleVO) {
+        ResultModel resultModel = new ResultModel();
+        // 判断是否缺乏必要信息
+        if (saleVO == null || saleVO.getGoo_goodsNum() == null || saleVO.getSaleNum() == null) {
+            resultModel.setStatus(1);
+            resultModel.setMessage("缺乏必要参数!");
+            return resultModel;
+        }
+        // 更新存储信息
+        storeMapper.updateStoreBySale(saleVO);
+        resultModel.setStatus(0);
+        resultModel.setMessage("更新存储信息成功!");
+        return resultModel;
+    }
+
 
 }

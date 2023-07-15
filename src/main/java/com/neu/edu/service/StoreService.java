@@ -2,6 +2,7 @@ package com.neu.edu.service;
 
 import com.neu.edu.utils.ResultModel;
 import com.neu.edu.utils.ResultModelGet;
+import com.neu.edu.vo.SaleVO;
 import com.neu.edu.vo.StoreVO;
 
 public interface StoreService {
@@ -10,4 +11,6 @@ public interface StoreService {
     ResultModel addStore(StoreVO storeVO);
     ResultModel deleteStoreById(int storeNum);
     ResultModel updateStore(StoreVO storeVO);
+
+    ResultModel updateStoreBySale(SaleVO saleVO);
 }

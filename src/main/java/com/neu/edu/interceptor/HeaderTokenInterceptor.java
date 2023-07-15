@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 public class HeaderTokenInterceptor implements HandlerInterceptor {
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
-        // 获取token
+//         获取token
         String token = request.getHeader("token");
         System.out.println(token);
         // 验证token

@@ -1,5 +1,6 @@
 package com.neu.edu.mapper;
 
+import com.neu.edu.vo.SaleVO;
 import com.neu.edu.vo.StoreVO;
 
 import java.util.List;
@@ -19,4 +20,5 @@ public interface StoreMapper {
     int deleteStoreById(Integer storeNum);
     int updateStore(StoreVO storeVO);
 
+    int updateStoreBySale(SaleVO saleVO);
 }

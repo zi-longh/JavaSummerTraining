@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping(value = "/storage")
 public class StorageController {
-
     @Autowired
     StorageService storageService;
 

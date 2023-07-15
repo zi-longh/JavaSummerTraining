@@ -60,7 +60,7 @@
     SELECT
         (
             SELECT
-                SUM(supplierSum)
+                IFNULL(SUM(supplierSum),0)
             FROM
                 provide
             WHERE
@@ -68,27 +68,42 @@
         ) AS supplySum,
         (
             SELECT
-                SUM(storageSum)
+                IFNULL(SUM(storageSum),0)
             FROM
                 store
             WHERE
                 goo_goodsNum = #{goo_goodsNum}
         ) AS storageSum,
+	    (
+	    SELECT
+		     IFNULL(SUM(saleNum),0)
+	    FROM
+		     sale
+	    WHERE
+		     goo_goodsNum = #{goo_goodsNum}
+	    )AS saleSum,
         (
             SELECT
-                SUM(supplierSum)
+                IFNULL(SUM(supplierSum),0)
             FROM
                 provide
             WHERE
                 goo_goodsNum = #{goo_goodsNum}
         ) - (
             SELECT
-                SUM(storageSum)
+                IFNULL(SUM(storageSum),0)
             FROM
                 store
             WHERE
                 goo_goodsNum = #{goo_goodsNum}
+        ) - (
+            SELECT
+                IFNULL(SUM(saleNum),0)
+            FROM
+                sale
+            WHERE
+                goo_goodsNum = #{goo_goodsNum}
         ) AS availableNum
-</select>
+    </select>
 
 </mapper>

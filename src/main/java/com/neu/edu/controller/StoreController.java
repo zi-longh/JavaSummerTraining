@@ -3,6 +3,7 @@ package com.neu.edu.controller;
 import com.neu.edu.service.StoreService;
 import com.neu.edu.utils.ResultModel;
 import com.neu.edu.utils.ResultModelGet;
+import com.neu.edu.vo.SaleVO;
 import com.neu.edu.vo.StoreVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -57,6 +58,17 @@ public class StoreController {
     public ResultModel updateStore(@RequestBody StoreVO storeVO) {
         return storeService.updateStore(storeVO);
     }
+
+
+    /**
+     * 更新存储信息，减少storageSum, 需要提供goo_goodsNum(商品编号), saleNum(销售数量)
+     * @param saleVO 存储减少信息, 优先检索仓库202307
+     */
+    @PutMapping(value = "/updateStoreBySale")
+    public ResultModel updateStoreBySale(@RequestBody SaleVO saleVO) {
+        return storeService.updateStoreBySale(saleVO);
+    }
+
 
 
 }

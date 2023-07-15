@@ -29,7 +29,7 @@ public class CommonController {
     }
 
     /**
-     * 需要提供参数goo_goodsNum
+     * 需要提供参数goo_goodsNum, 查询可入库数量
      */
     @PostMapping(value = "/getAvailableNum")
     public ResultModelGetById<StoreInfoVO> getAvailableNum(@RequestBody StoreVO storeVO) {

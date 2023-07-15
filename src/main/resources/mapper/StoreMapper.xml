@@ -32,4 +32,8 @@
         update store set sto_storageNum = #{sto_storageNum}, goo_goodsNum = #{goo_goodsNum}, storageSum = #{storageSum}
         where id = #{id}
     </update>
+
+    <update id="updateStoreBySale" parameterType="StoreVO">
+        update store set storageSum = storageSum - #{saleNum} WHERE store.sto_storageNum = 202307 and store.goo_goodsNum = #{goo_goodsNum}
+    </update>
 </mapper>

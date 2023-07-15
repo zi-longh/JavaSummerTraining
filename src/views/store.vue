@@ -185,9 +185,9 @@
           <el-select v-model="addForm.sto_storageNum" placeholder="请选择">
             <el-option
               v-for="item in storageNumArr"
-              :key="item.storageNum"
-              :label="item.storageNum"
-              :value="item.storageNum"
+              :key="item"
+              :label="item"
+              :value="item"
             >
             </el-option>
           </el-select>
@@ -200,9 +200,9 @@
           >
             <el-option
               v-for="item in goodsNumArr"
-              :key="item.goodsNum"
-              :label="item.goodsNum"
-              :value="item.goodsNum"
+              :key="item"
+              :label="item"
+              :value="item"
             >
             </el-option>
           </el-select>
@@ -297,6 +297,7 @@ export default {
       if (!res1.status) this.goodsNumArr = res1.data
       const res2 = await storage.getStoragesNum()
       if (!res2.status) this.storageNumArr = res2.data
+      // console.log(this.storageNumArr[0]);
     },
     //改变每页大小的方法
     handleSizeChange(val) {
@@ -359,14 +360,14 @@ export default {
     },
     handleAdd() {
       this.getNumArr()
-      console.log(this.storageNumArr)
+      // console.log(this.storageNumArr)
       this.addDialogVisible = true
     },
     async handleChange(id) {
-      const res = await goods.getGoodsSumById(id)
+      const res = await goods.getAvailableNum({goo_goodsNum:id})
       if (!res.status) {
-        this.goodsSum = res.data.goodsSum
-      } else {
+        this.goodsSum = res.data.availableNum
+      } else  {
         this.goodsSum = 0
       }
     },

@@ -6,7 +6,7 @@
       <h2>超市后台信息管理系统</h2>
       <p><span>您好</span>,admin</p>
       <p>
-        <a href="#">管理首页</a> |
+        <a href="/#/home">管理首页</a> |
         <a href="javascript:void(0)" @click="loginOut()">退出系统</a>
       </p>
     </div>
@@ -16,7 +16,6 @@
       <el-menu
       class="el-menu-vertical-demo"
       text-color="#fff"
-      default-active="1"
       background-color="#545c64"
       @open="handleOpen"
       @close="handleClose"
@@ -62,7 +61,7 @@
         <template v-slot:title>
           <!-- 获取销售信息 -->
           <el-icon><List /></el-icon>
-          <span>账单管理</span>
+          <span>销售管理</span>
         </template>
       </el-menu-item>
       <el-sub-menu index="5">
@@ -126,9 +125,7 @@ export default {
       // console.log(key, keyPath)
     },
     loginOut() {
-      //发起ajax到后端路由去执行清除cookie的操作
-      // this.axios.get("http://127.0.0.1:3000/user/loginOut").then(result=>{
-      //     //根据是否清除成功处理业务逻辑
+      window.localStorage.removeItem("token");
       this.$message({
         message: '退出成功！ 欢迎下次登录!',
         type: 'success',

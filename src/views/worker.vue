@@ -240,7 +240,7 @@
             :popper-append-to-body="false"
           >
             <el-option label="经理" value="0"></el-option>
-            <el-option label="销售员" value="1"></el-option>
+            <el-option label="送货员" value="1"></el-option>
             <el-option label="收银员" value="2"></el-option>
             <el-option label="理货员" value="3"></el-option>
             <el-option label="安保" value="4"></el-option>

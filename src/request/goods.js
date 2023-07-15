@@ -6,7 +6,7 @@ const updateGoodById = async (id) => await put(`${prefix}/updateGood`, id)
 const deleteGoodById = async (id) => await axiosDelete(`${prefix}/deleteGoodById/${id}`)
 const addGood = async (data) => await post(`${prefix}/addGood`, data)
 const getGoodsNum = async () => await get(`${prefix}/getGoodsNum`)
-const getGoodsSumById = async (id) => await get(`${prefix}/getGoodsSumById`, { id })
+const getAvailableNum = async (data) => await post("/data/getAvailableNum",data);
 export default {
   getGoodsInfo,
   updateGoodById,
@@ -14,5 +14,5 @@ export default {
   addGood,
   getAllGoodsInfo,
   getGoodsNum,
-  getGoodsSumById,
+  getAvailableNum
 }

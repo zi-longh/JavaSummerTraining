@@ -139,9 +139,9 @@
           >
             <el-option
               v-for="item in suppliersNumArr"
-              :key="item.supplierNum"
-              :label="item.supplierNum"
-              :value="item.supplierNum"
+              :key="item"
+              :label="item"
+              :value="item"
             >
             </el-option>
           </el-select>
@@ -150,9 +150,9 @@
           <el-select v-model="ruleForm.goo_goodsNum" placeholder="请选择">
             <el-option
               v-for="item in goodsNumArr"
-              :key="item.goodsNum"
-              :label="item.goodsNum"
-              :value="item.goodsNum"
+              :key="item"
+              :label="item"
+              :value="item"
             >
             </el-option>
           </el-select>
@@ -195,9 +195,9 @@
           >
             <el-option
               v-for="item in suppliersNumArr"
-              :key="item.supplierNum"
-              :label="item.supplierNum"
-              :value="item.supplierNum"
+              :key="item"
+              :label="item"
+              :value="item"
             >
             </el-option>
           </el-select>
@@ -206,9 +206,9 @@
           <el-select v-model="addForm.goo_goodsNum" placeholder="请选择">
             <el-option
               v-for="item in goodsNumArr"
-              :key="item.goodsNum"
-              :label="item.goodsNum"
-              :value="item.goodsNum"
+              :key="item"
+              :label="item"
+              :value="item  "
             >
             </el-option>
           </el-select>

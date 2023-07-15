@@ -1,6 +1,6 @@
 // import http from './http'
 import { get, post,put,axiosDelete } from './http'
-const login = async (data) => await post('/login', data)
+
 const prefix = "/worker"
 const getUserInfoById = async (data) => await get(`${prefix}/getUserInfoById`, data)
 // 添加员工
@@ -16,7 +16,7 @@ const deleteWorkerById = async (workerNum) => await axiosDelete(`${prefix}/delet
 // 获取员工编号
 const getWorkersNum = async () => await get( `${prefix}/getWorkersNum`)
 export default {
-  login,
+
   getUserInfoById,
   addWorker,
   getWorkersInfo,

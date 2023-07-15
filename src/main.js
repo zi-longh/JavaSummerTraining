@@ -7,33 +7,22 @@ import 'element-plus/dist/index.css'
 import filter from "@/config/filter"
 //在elementUI后面引入公用样式
 import './assets/style/public.css'
+import store from './store/index'
 
 //引入axios
 import axios from 'axios'
-//将axios挂载到vue原型上，vue实例中可无限使用(看不懂)
-// Vue.prototype.axios = axios;
 
 //引入qs处理axios的post参数(是否需要下载？属于前端)
 import qs from 'qs'
 
 window.$vueApp = Vue.createApp(App)
 window.$vueApp.use(ElementPlus)
-// Object.keys(Icons).forEach((key) => {
-//   // 注册全局组件（组件名，组件实现）
-//   // Icons[key as keyof typeof Icons]：key作为与Icons对象的键之一匹配的字符串,Icons对象取值与key匹配的值
-//   // key输出是各个icon名
-//   window.$vueApp.component(key, Icons[key])
-// })
 
 window.$vueApp.config.globalProperties.routerAppend = (path, pathToAppend) => {
   return path + (path.endsWith('/') ? '' : '/') + pathToAppend
 }
 //挂在原型方便后期的vue实例使用
 window.$vueApp.config.globalProperties.qs = qs
-
-//配置后端服务器的主机
-// let serverApi="http://127.0.0.1:3000";
-// Vue.prototype.api=serverApi;
 
 //构造全局守卫
 //进入其他路由前都要进行守卫
@@ -64,4 +53,5 @@ window.$vueApp.config.globalProperties.$filters = filter;
 
 
 window.$vueApp.use(router)
+window.$vueApp.use(store)
 window.$vueApp.mount('#app')

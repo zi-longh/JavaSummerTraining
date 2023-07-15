@@ -139,9 +139,9 @@
           <el-select v-model="ruleForm.emp_workerNum" placeholder="请选择">
             <el-option
               v-for="item in workerNumArr"
-              :key="item.workerNum"
-              :label="item.workerNum"
-              :value="item.workerNum"
+              :key="item"
+              :label="item"
+              :value="item"
             >
             </el-option>
           </el-select>
@@ -151,9 +151,9 @@
           <el-select v-model="ruleForm.goo_goodsNum" placeholder="请选择">
             <el-option
               v-for="item in goodsNumArr"
-              :key="item.goodsNum"
-              :label="item.goodsNum"
-              :value="item.goodsNum"
+              :key="item"
+              :label="item"
+              :value="item"
             >
             </el-option>
           </el-select>
@@ -194,9 +194,9 @@
           <el-select v-model="addForm.emp_workerNum" placeholder="请选择">
             <el-option
               v-for="item in workerNumArr"
-              :key="item.workerNum"
-              :label="item.workerNum"
-              :value="item.workerNum"
+              :key="item"
+              :label="item"
+              :value="item"
             >
             </el-option>
           </el-select>
@@ -206,9 +206,9 @@
           <el-select v-model="addForm.goo_goodsNum" placeholder="请选择">
             <el-option
               v-for="item in goodsNumArr"
-              :key="item.goodsNum"
-              :label="item.goodsNum"
-              :value="item.goodsNum"
+              :key="item"
+              :label="item"
+              :value="item"
             >
             </el-option>
           </el-select>

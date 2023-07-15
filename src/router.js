@@ -18,55 +18,56 @@ export default VueRouter.createRouter({
       component: Home,
       children: [
         {
+          path:"/home",
+          component:()=>import("./views/dashboard.vue")
+        },
+        {
           //商品管理
           path: '/goodsmsg',
-          component: Vue.defineAsyncComponent(
-            () => import('./views/GoodsMsg.vue')
-          ), //动态导入组件
+          component: 
+            () => import('./views/GoodsMsg.vue'), //动态导入组件
         },
         {
           //供货商管理
           path: '/suppliermsg',
-          component: Vue.defineAsyncComponent(
-            () => import('./views/suppliersManage.vue')
-          ), //动态导入组件
+          component: 
+            () => import('./views/suppliersManage.vue'), //动态导入组件
         },
         {
           //供货商管理
           path: '/supplierIn',
-          component: Vue.defineAsyncComponent(
-            () => import('./views/supplierIn.vue')
-          ), //动态导入组件
+          component: 
+            () => import('./views/supplierIn.vue'), //动态导入组件
         },
         {
           //账单管理
           path: '/paymsg',
-          component: Vue.defineAsyncComponent(
-            () => import('./views/paymsg.vue')
-          ), //动态导入组件
+          component: 
+            () => import('./views/paymsg.vue'), //动态导入组件
         },
         {
           //仓库管理
           path: '/storagemsg',
-          component: Vue.defineAsyncComponent(
-            () => import('./views/storagemsg.vue')
-          ), //动态导入组件
+          component: 
+            () => import('./views/storagemsg.vue'), //动态导入组件
         },
         {
           //添加库存
           path: '/storageadd',
-          component: Vue.defineAsyncComponent(
-            () => import('./views/store.vue')
-          ), //动态导入组件
+          component: 
+            () => import('./views/store.vue'), //动态导入组件
         },
         {
           //员工
           path: '/worker',
-          component: Vue.defineAsyncComponent(
-            () => import('./views/worker.vue')
-          ), //动态导入组件
+          component: 
+            () => import('./views/worker.vue'), //动态导入组件
         },
       ],
     },
+    {
+      path:'/checker',
+      component:() => import("./views/checker/index.vue")
+    }
   ],
 })

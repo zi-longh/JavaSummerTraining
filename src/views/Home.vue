@@ -39,6 +39,7 @@ export default {
     LeftMenu,
     RightTop,
     RightFoot,
+
   },
   methods: {},
 }

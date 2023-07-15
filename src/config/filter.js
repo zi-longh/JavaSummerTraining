@@ -21,7 +21,7 @@ const filterOffice = (office) => {
       return '经理'
 
     case '1':
-      return '销售员'
+      return '送货员'
 
     case '2':
       return '收银员'

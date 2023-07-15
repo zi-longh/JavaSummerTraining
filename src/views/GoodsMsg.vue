@@ -75,7 +75,7 @@
 
             <el-table-column label="所属分类">
               <template v-slot="scope">
-                {{ scope.row.goodsType || filterGoodsType }}
+                {{ $filters.filterGoodsType( scope.row.goodsType) }}
               </template>
             </el-table-column>
 
@@ -99,7 +99,7 @@
                   size="small"
                   type="danger"
                   @click="handleDelete(scope.row.goodsNum)"
-                  ><el-icon><el-icon-delete /></el-icon>删除</el-button
+                  ><el-icon><Delete /></el-icon>删除</el-button
                 >
               </template>
             </el-table-column>
@@ -133,7 +133,7 @@
       id="mydailog"
     >
       <el-form
-        :model-value="ruleForm"
+        :model="ruleForm"
         :rules="rules"
         ref="ruleFormRef"
         label-width="100px"
@@ -179,8 +179,8 @@
       id="mydailog"
     >
       <el-form
-        :model-value="addForm"
-        :rules="rules"
+        :model="addForm"
+        :rules=" rules"
         ref="addFormRef"
         label-width="100px"
         class="demo-ruleForm"
@@ -200,7 +200,7 @@
           <el-input v-model="addForm.goodsName"></el-input>
         </el-form-item>
         <el-form-item label="售价" prop="goodsPrice">
-          <el-input v-model="addForm.goodsPrice"></el-input>
+          <el-input v-model="addForm.goodsPrice" @input="changeInput($event)"></el-input>
         </el-form-item>
         <el-form-item label="成本价" prop="goodsCost">
           <el-input v-model="addForm.goodsCost"></el-input>
@@ -223,10 +223,7 @@ import { Edit ,Delete  } from '@element-plus/icons'
 import http from '../request/goods'
 
 export default {
-  components: {
-    Edit,
-    Delete,
-  },
+
   data() {
     return {
       dialogVisible: false,
@@ -260,11 +257,18 @@ export default {
       },
     }
   },
+  components:{
+    Edit,
+    Delete
+  },
   created() {
     this.getAllInfo()
     // console.log(  getInfo('getGoodsInfo',{currentPage:this.currentPage,pageSize:this.pageSize}))
   },
   methods: {
+    changeInput(){
+      this.$forceUpdate();
+    },
     //改变每页大小的方法
     handleSizeChange(val) {
       //把改变后的值赋值给数据属性

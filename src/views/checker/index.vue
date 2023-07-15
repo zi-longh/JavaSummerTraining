@@ -222,9 +222,7 @@ export default {
       })
         .then(()=>{
           var date = new Date()
-           date.toLocaleDateString().replaceAll('/','-')
-           console.log(date);
-           date = "2023-07-15"
+           date = date.toLocaleDateString().replaceAll('/','-')
           this.$store.dispatch("addSales",date)
         })
       }else{

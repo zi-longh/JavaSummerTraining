@@ -23,7 +23,8 @@ public class UserController {
      * @param userVO 用户信息 必须传入用户名和密码
      */
     @PostMapping(value = "/login")
-    public ResultModelGetById<String> login(@RequestBody UserVO userVO) {
+    // @RequestBody
+    public ResultModelGetById<String> login( UserVO userVO) {
         return userService.login(userVO.getUserName(), userVO.getPassword(), userVO.getOffice());
     }
 

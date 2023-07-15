@@ -41,7 +41,7 @@ public class SaleController {
      *        会自动获取emp_workNum
      */
     @PostMapping(value = "/addSale")
-    public ResultModel addSale(HttpServletRequest request, SaleVO saleVO) {
+    public ResultModel addSale(HttpServletRequest request, @RequestBody SaleVO saleVO) {
         String token = request.getHeader("token");
 //        System.out.println(JWTUtil.getUserInfoFromToken(token));
 //        System.out.println(token);

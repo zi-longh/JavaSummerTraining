@@ -2,6 +2,7 @@ package com.neu.edu.service.impl;
 
 import com.neu.edu.mapper.CommonMapper;
 import com.neu.edu.service.CommonService;
+import com.neu.edu.utils.ResultModel;
 import com.neu.edu.utils.ResultModelGet;
 import com.neu.edu.utils.ResultModelGetById;
 import com.neu.edu.vo.*;
@@ -71,5 +72,31 @@ public class CommonServiceImpl implements CommonService {
             resultModelGetById.setData(storeInfoVO);
         }
         return resultModelGetById;
+    }
+
+    /**
+     * 完成清除购物车的操作 （收银操作）
+     */
+    @Override
+    public ResultModel sellGoods(List<SaleVO> saleVOList,String saleTime, Integer workerNum) {
+        if(saleVOList == null || saleVOList.size() == 0){
+            ResultModel resultModel = new ResultModel();
+            resultModel.setStatus(1);
+            resultModel.setMessage("saleVOList为空!,saleTime:"+saleTime+",workerNum:"+workerNum);
+            return resultModel;
+        }
+
+        for (SaleVO saleVO : saleVOList) {
+            saleVO.setSaleTime(saleTime);
+            saleVO.setEmp_workerNum(workerNum);
+            System.out.println(saleVO);
+
+            commonMapper.sellGoodsAddSale(saleVO);
+            commonMapper.sellGoodsUpdateStore(saleVO);
+        }
+        ResultModel resultModel = new ResultModel();
+        resultModel.setStatus(0);
+        resultModel.setMessage("清空购物车成功!");
+        return resultModel;
     }
 }

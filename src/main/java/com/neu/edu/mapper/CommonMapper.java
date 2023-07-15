@@ -10,4 +10,6 @@ public interface CommonMapper {
     List<VO3> getInfo3();
 
     StoreInfoVO getAvailableNum(StoreVO storeVO);
+    int sellGoodsAddSale(SaleVO saleVO);
+    int sellGoodsUpdateStore(SaleVO saleVO);
 }

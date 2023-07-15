@@ -106,4 +106,21 @@
         ) AS availableNum
     </select>
 
+    <insert id="sellGoodsAddSale" parameterType="SaleVO">
+        INSERT INTO
+            sale(emp_workerNum,goo_goodsNum,saleTime,saleNum)
+        VALUES
+            (#{emp_workerNum},#{goo_goodsNum},#{saleTime},#{saleNum})
+    </insert>
+
+    <update id="sellGoodsUpdateStore" parameterType="SaleVO">
+        UPDATE
+            store
+        SET
+            storageSum = storageSum - #{saleNum}
+        WHERE
+            goo_goodsNum = #{goo_goodsNum} AND
+            sto_storageNum = 202307
+    </update>
+
 </mapper>

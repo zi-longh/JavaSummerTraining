@@ -1,11 +1,16 @@
 package com.neu.edu.controller;
 
 import com.neu.edu.service.CommonService;
+import com.neu.edu.utils.JWTUtil;
+import com.neu.edu.utils.ResultModel;
 import com.neu.edu.utils.ResultModelGet;
 import com.neu.edu.utils.ResultModelGetById;
 import com.neu.edu.vo.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
+import javax.servlet.http.HttpServletRequest;
+import java.util.List;
 
 @RestController
 @RequestMapping(value = "/data")
@@ -35,4 +40,21 @@ public class CommonController {
     public ResultModelGetById<StoreInfoVO> getAvailableNum(@RequestBody StoreVO storeVO) {
         return commonService.getAvailableNum(storeVO);
     }
+
+    /**
+     * 清空购物车
+     */
+    @PostMapping(value = "/sellGoods")
+    public ResultModel sellGoods(HttpServletRequest request, @RequestBody VO4 vo4) {
+        String token = request.getHeader("token");
+        return commonService.sellGoods(vo4.getSaleVOList(), vo4.getSaleTime(), JWTUtil.getUserInfoFromToken(token).getWorkerNum());
+    }
+
+/*
+    测试用
+    @PostMapping(value = "/sellGoods")
+    public ResultModel sellGoods(@RequestBody VO4 vo4) {
+        return commonService.sellGoods(vo4.getSaleVOList(), vo4.getSaleTime(), 202201);
+    }*/
+
 }

@@ -96,7 +96,7 @@ public class CommonServiceImpl implements CommonService {
         }
         ResultModel resultModel = new ResultModel();
         resultModel.setStatus(0);
-        resultModel.setMessage("清空购物车成功!");
+        resultModel.setMessage("结算成功!");
         return resultModel;
     }
 }

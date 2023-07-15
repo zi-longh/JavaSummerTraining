@@ -39,7 +39,7 @@ public class GoodsController {
 
 
     @PostMapping(value = "/addGood")
-    public ResultModel addGood(GoodsVO goodsVO) {
+    public ResultModel addGood(@RequestBody GoodsVO goodsVO) {
         return goodsService.addGood(goodsVO);
     }
 

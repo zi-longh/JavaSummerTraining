@@ -44,16 +44,16 @@ public class CommonController {
     /**
      * 清空购物车
      */
-//    @PostMapping(value = "/sellGoods")
-//    public ResultModel sellGoods(HttpServletRequest request, @RequestBody VO4 vo4) {
-//        String token = request.getHeader("token");
-//        return commonService.sellGoods(vo4.getSaleVOList(), vo4.getSaleTime(), JWTUtil.getUserInfoFromToken(token).getWorkerNum());
-//    }
+    @PostMapping(value = "/sellGoods")
+    public ResultModel sellGoods(HttpServletRequest request, @RequestBody VO4 vo4) {
+        String token = request.getHeader("token");
+        return commonService.sellGoods(vo4.getSaleVOList(), vo4.getSaleTime(), JWTUtil.getUserInfoFromToken(token).getWorkerNum());
+    }
 
 //    测试用
-    @PostMapping(value = "/sellGoods")
-    public ResultModel sellGoods(@RequestBody VO4 vo4) {
-        return commonService.sellGoods(vo4.getSaleVOList(), vo4.getSaleTime(), 202201);
-    }
+//    @PostMapping(value = "/sellGoods")
+//    public ResultModel sellGoods(@RequestBody VO4 vo4) {
+//        return commonService.sellGoods(vo4.getSaleVOList(), vo4.getSaleTime(), 202201);
+//    }
 
 }

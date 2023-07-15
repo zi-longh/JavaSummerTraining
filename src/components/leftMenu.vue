@@ -3,7 +3,7 @@
   <el-aside width="240px">
     <!--1.1 左侧导航顶部 -->
     <div id="asideTop">
-      <h2>超市后台信息管理系统</h2>
+      <h2>超市后台管理系统</h2>
       <p><span>您好</span>,admin</p>
       <p>
         <a href="/#/home">管理首页</a> |

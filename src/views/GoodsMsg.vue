@@ -353,11 +353,11 @@ export default {
               this.$message.success('添加商品信息成功！')
               this.currentPage = 1
               this.getAllInfo()
-              this.addDialogVisible.value = false
+              this.addDialogVisible = false
               this.formSearch = {}
             } else {
               this.$message.error('添加商品信息失败！')
-              this.addDialogVisible.value = false
+              this.addDialogVisible = false
             }
           }
         } else {

@@ -28,7 +28,7 @@
             <div>总计</div>
           </el-col>
           <el-col :span="12" class="menu-bottom-font">
-            <div>￥{{ totalPrice }}</div>
+            <div>￥{{ parseFloat(totalPrice).toFixed(2) }}</div>
           </el-col>
         </el-row>
     
@@ -215,7 +215,7 @@ export default {
     },
     addSales() {
       if(this.selectedGoods.length > 0){
-        this.$confirm(`确定结算所有商品？总计: ￥${this.totalPrice}元, 是否继续?`, '提示', {
+        this.$confirm(`确定结算所有商品？总计: ￥${parseFloat(this.totalPrice).toFixed(2)}元, 是否继续?`, '提示', {
         confirmButtonText: '确定',
         cancelButtonText: '取消',
         type: 'warning',

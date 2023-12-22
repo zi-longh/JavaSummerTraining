@@ -9,10 +9,10 @@
 
     <!--spring管理连接池-->
     <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource">
-        <property name="username" value="root"/>
-        <property name="password" value="qweasd"/>
-        <property name="driverClassName" value="com.mysql.cj.jdbc.Driver"/>
-        <property name="url" value="jdbc:mysql://localhost:3306/db_market"/>
+        <property name="username" value="sa"/>
+        <property name="password" value="sa"/>
+        <property name="driverClassName" value="com.microsoft.sqlserver.jdbc.SQLServerDriver"/>
+        <property name="url" value="jdbc:sqlserver://localhost:1433;DatabaseName=db_market"/>
         <property name="maxActive" value="10"/>
         <property name="initialSize" value="3"/>
         <property name="maxWait" value="2000"/>
